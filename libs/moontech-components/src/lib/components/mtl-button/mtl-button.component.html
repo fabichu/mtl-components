@@ -1,0 +1,17 @@
+<div class="mtl-button">
+  <button class="shadow-md text-white" [ngClass]="{
+    'bg-blue-500': type === 'default',
+    'bg-red-500': type === 'danger',
+    'bg-green-500': type === 'save',
+    'rounded-full fixed px-5 aspect-square': float,
+    'rounded-lg py-2 px-4': !float,
+    'top-7': floatPosition === 'tr' || floatPosition === 'tl',
+    'bottom-7': floatPosition === 'br' || floatPosition === 'bl',
+    'right-7': floatPosition === 'br' || floatPosition === 'tr',
+    'left-7': floatPosition === 'bl' || floatPosition === 'tl',
+    'text-xs': size === 'small',
+    'text-2xl': size === 'big',
+  }">
+    <ng-content></ng-content>
+  </button>
+</div>

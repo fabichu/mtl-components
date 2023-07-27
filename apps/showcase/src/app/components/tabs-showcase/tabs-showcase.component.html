@@ -1,0 +1,117 @@
+<div class="tabs-showcase">
+  <mtl-base-showcase title="<mtl-tabs></ mtl-tabs>">
+    <div examples>
+      <mtl-tabs (tabIndex)="tabSelected($event)">
+        <mtl-tab-item title="Tab 1">
+          Quia blanditiis magnam fuga sint quo officia. Dicta excepturi omnis illum dolore quidem corporis.
+          Tempora id facilis libero saepe rem. Architecto facere natus quisquam tempora ea. Amet quo sit repudiandae.
+          Alias quaerat error dolorem veniam voluptas officiis eum.
+        </mtl-tab-item>
+        <mtl-tab-item title="Tab 2">
+          Sit omnis repellat qui aspernatur. Tenetur deserunt culpa aspernatur impedit fugiat harum voluptatem amet.
+          Laudantium dolor praesentium. Dolores voluptate enim est voluptatibus magni aut inventore. Ea blanditiis
+          perspiciatis sit eos dolorem temporibus voluptatem incidunt ut.
+        </mtl-tab-item>
+        <mtl-tab-item title="Tab 3">
+          Accusantium corporis iste cupiditate possimus modi hic. Cumque laborum consequatur architecto eum porro
+          debitis officia amet. Voluptates aut est omnis ullam velit eveniet.
+        </mtl-tab-item>
+      </mtl-tabs>
+    </div>
+
+    <div code>
+      <mtl-tabs>
+        <mtl-tab-item title="HTML">
+          <pre>
+            <code>
+&lt;mtl-tabs &#40;tabIndex&#41;=&#34;tabSelected&#40;$event&#41;&#34;&gt;
+  &lt;mtl-tab-item title=&quot;Tab 1&quot;&gt;
+    Quia blanditiis magnam fuga sint quo officia. Dicta excepturi omnis illum 
+    dolore quidem corporis. Tempora id facilis libero saepe rem. 
+    Architecto facere natus quisquam tempora ea. Amet quo sit repudiandae.
+    Alias quaerat error dolorem veniam voluptas officiis eum.
+  &lt;/mtl-tab-item&gt;
+  &lt;mtl-tab-item title=&quot;Tab 2&quot;&gt;
+    Sit omnis repellat qui aspernatur. Tenetur deserunt culpa aspernatur 
+    impedit fugiat harum voluptatem amet. Laudantium dolor praesentium. 
+    Dolores voluptate enim est voluptatibus magni aut inventore. Ea blanditiis
+    perspiciatis sit eos dolorem temporibus voluptatem incidunt ut.
+  &lt;/mtl-tab-item&gt;
+  &lt;mtl-tab-item title=&quot;Tab 3&quot;&gt;
+    Accusantium corporis iste cupiditate possimus modi hic. 
+    Cumque laborum consequatur architecto eum porro
+    debitis officia amet. Voluptates aut est omnis ullam velit eveniet.
+  &lt;/mtl-tab-item&gt;
+&lt;/mtl-tabs&gt;
+            </code>
+          </pre>
+        </mtl-tab-item>
+        <mtl-tab-item title="TS">
+          <pre>
+            <code>
+import &#123; Component &#125; from '@angular/core';
+import &#123; MtlTabItemComponent, MtlTabsComponent &#125; from '@moontech-components';
+
+@Component(&#123;
+  selector: 'mtl-tabs-showcase',
+  standalone: true,
+  imports: [
+    MtlTabItemComponent,
+    MtlTabsComponent
+  ]
+  templateUrl: './tabs-showcase.component.html',
+  styleUrls: ['./tabs-showcase.component.scss']
+&#125;)
+export class TabsShowcaseComponent &#123;
+
+  tabSelected ($event: number) &#123;
+    console.log($event);
+  &#125;
+&#125;
+            </code>
+          </pre>
+        </mtl-tab-item>
+      </mtl-tabs>
+    </div>
+
+    <div inputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white ">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Valor por defecto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>title</td>
+            <td>Título del tab item</td>
+            <td>string</td>
+            <td>'Tab'</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div outputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white ">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Valor devuelto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>tabIndex</td>
+            <td>Evento al seleccionar un tab</td>
+            <td>number</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mtl-base-showcase>
+</div>

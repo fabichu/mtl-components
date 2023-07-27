@@ -1,0 +1,13 @@
+<div class="mtl-tabs">
+  <ng-template ngFor let-tab [ngForOf]="tabItems">
+    <div class="text-center text-lg p-4 inline-block cursor-pointer border-b-2" (click)="open(tab)" [ngClass]="{
+        'border-indigo-500': tab.selected,
+        'border-transparent': !tab.selected
+      }">
+      <span>{{tab.title}}</span>
+    </div>
+  </ng-template>
+  <div class="p-3" *ngIf="contentTemplate?.elementRef">
+    <ng-template *ngTemplateOutlet="contentTemplate"></ng-template>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<nav class="navbar bg-gray-800 text-white">
+  <div class="mx-auto max-w-7xl px-8 h-16 flex justify-between items-center gap-3">
+    <div class="flex justify-start gap-8 items-center">
+      <div class="logo flex items-center gap-4">
+        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+          alt="Your Company">
+        <p class="text-2xl hidden md:block">Moontech</p>
+      </div>
+      <div class="links space-x-4 text-lg font-bold hidden md:block">
+        <ng-container *ngFor="let link of mtlLinks">
+          <a class="px-3 py-2" [routerLink]="link.path">{{ link.text }}</a>
+        </ng-container>
+      </div>
+    </div>
+    <div class="dark-mode hidden md:block">
+      <button (click)="toogleDarkMode()"
+        class="relative rounded-full aspect-square px-3 font-bold bg-indigo-600 hover:bg-indigo-500">
+        <div *ngIf="darkMode() === true" class="sun-icon ">
+          <i class="h-4 w-4 fa-solid fa-sun"></i>
+        </div>
+        <div *ngIf="darkMode() === false" class="moon-icon">
+          <i class="h-4 w-4 fa-solid fa-moon"></i>
+        </div>
+      </button>
+    </div>
+    <div class="hamburguer text-4xl flex items-center md:hidden">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,136 @@
+<div class="accordion-showcase">
+  <mtl-base-showcase title="<mtl-accordion></ mtl-accordion>">
+    <div examples>
+      <mtl-accordion title="Ejemplo acordeón 1" [open]="true">
+        Deserunt maiores temporibus officia aliquid ut aspernatur animi. Amet sed nam ut rerum et ea. Qui odit et natus
+        cupiditate commodi et sed hic. Asperiores illo nihil. Amet cupiditate non voluptatem voluptatem iure fuga.
+        Labore
+        saepe aliquam est maiores.
+
+        Ut ratione ipsam a autem reiciendis totam maxime. Quos fuga voluptatem dolorem cumque. Itaque maiores quia a.
+
+        Et ad nisi ipsum quis nesciunt ut sint recusandae. Eius et officia maiores. Architecto dicta velit esse.
+        Adipisci
+        provident quia sit asperiores. Consequatur fugit quasi ut dolor voluptas.
+      </mtl-accordion>
+      <mtl-accordion title="Ejemplo acordeón 2">
+        Quia aut impedit necessitatibus hic voluptas facere nihil itaque. Laborum error pariatur eum quo corrupti
+        accusamus. Tempore ipsum repellendus et aut magni molestiae nulla inventore.
+
+        Aliquid quia numquam quasi possimus repellendus tenetur iusto eaque. Dolor culpa est. Architecto eaque quasi.
+
+        Tenetur recusandae velit earum qui. Esse ut magnam iure dignissimos excepturi aut maiores. Laboriosam vel
+        architecto ab eos fugiat est. Aliquid numquam officia neque est doloremque. Atque aut tempora labore suscipit et
+        eum maxime et.
+      </mtl-accordion>
+    </div>
+
+    <div code>
+      <mtl-tabs>
+        <mtl-tab-item title="HTML">
+          <pre>
+            <code>
+&lt;mtl-accordion title=&quot;Ejemplo acordeón 1&quot; [open]=&quot;true&quot;&gt;
+  &lt;p&gt;
+    Deserunt maiores temporibus officia aliquid ut aspernatur animi. 
+    Amet sed nam ut rerum et ea. Qui odit et natus cupiditate commodi et sed hic. 
+    Asperiores illo nihil. Amet cupiditate non voluptatem voluptatem iure fuga. Labore
+    saepe aliquam est maiores.
+
+    Ut ratione ipsam a autem reiciendis totam maxime. Quos fuga voluptatem dolorem cumque. 
+    Itaque maiores quia a.
+
+    Et ad nisi ipsum quis nesciunt ut sint recusandae. Eius et officia maiores. 
+    Architecto dicta velit esse. Adipisci provident quia sit asperiores. 
+    Consequatur fugit quasi ut dolor voluptas.
+  &lt;/p&gt;
+&lt;/mtl-accordion&gt;
+&lt;mtl-accordion title=&quot;Ejemplo acordeón 2&quot;&gt;
+  &lt;p&gt;
+    Quia aut impedit necessitatibus hic voluptas facere nihil itaque. 
+    Laborum error pariatur eum quo corrupti accusamus. 
+    Tempore ipsum repellendus et aut magni molestiae nulla inventore.
+
+    Aliquid quia numquam quasi possimus repellendus tenetur iusto eaque. 
+    Dolor culpa est. Architecto eaque quasi.
+
+    Tenetur recusandae velit earum qui. Esse ut magnam iure dignissimos excepturi aut maiores. 
+    Laboriosam vel architecto ab eos fugiat est. Aliquid numquam officia neque est doloremque. 
+    Atque aut tempora labore suscipit et eum maxime et.
+  &lt;/p&gt;
+&lt;/mtl-accordion&gt;
+            </code>
+          </pre>
+        </mtl-tab-item>
+        <mtl-tab-item title="TS">
+          <pre>
+            <code>
+import &#123; Component &#125; from '@angular/core';
+import &#123; CommonModule &#125; from '@angular/common';
+import &#123; MtlAccordionComponent &#125; from '@moontech-components';
+
+@Component(&#123;
+  selector: 'mtl-accordion-showcase',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MtlAccordionComponent
+  ],
+  templateUrl: './accordion-showcase.component.html',
+  styleUrls: ['./accordion-showcase.component.scss']
+&#125;)
+export class AccordionShowcaseComponent &#123;
+&#125;
+            </code>
+          </pre>
+        </mtl-tab-item>
+      </mtl-tabs>
+    </div>
+
+    <div inputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white ">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Valor por defecto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>title</td>
+            <td>Título del accordeón</td>
+            <td>string</td>
+            <td>'Title'</td>
+          </tr>
+          <tr>
+            <td>open</td>
+            <td>Determina si el acordeón está abierto</td>
+            <td>boolean</td>
+            <td>false</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div outputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white ">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Valor devuelto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>clickEvent</td>
+            <td>Evento al abrir o cerrar el acordeón</td>
+            <td>boolean</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mtl-base-showcase>
+</div>

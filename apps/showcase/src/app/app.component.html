@@ -1,0 +1,18 @@
+<body class="min-w-screen min-h-screen" [ngClass]="{ 'dark bg-gray-700': darkMode()}">
+  <header>
+    <mtl-navbar>
+      <mtl-navbar-item text="Accordion" path="/accordion"></mtl-navbar-item>
+      <mtl-navbar-item text="Tabs" path="/tabs"></mtl-navbar-item>
+      <mtl-navbar-item text="Dropdown" path="/dropdown"></mtl-navbar-item>
+      <mtl-navbar-item text="Toast" path="/toast"></mtl-navbar-item>
+      <mtl-navbar-item text="Button" path="/button"></mtl-navbar-item>
+    </mtl-navbar>
+  </header>
+  <main>
+    <div class="mx-auto max-w-7xl px-2 py-10 sm:px-6 lg:px-8">
+      <div class="relative">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+</body>

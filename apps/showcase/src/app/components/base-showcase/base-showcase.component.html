@@ -1,0 +1,23 @@
+<div class="base-showcase flex flex-col gap-2">
+  <h1 class="text-3xl font-bold mb-4 text-indigo-500">{{ title }}</h1>
+
+  <mtl-accordion title="Ejemplos" [open]="true" *ngIf="showExamples">
+    <ng-content select="[examples]" content-accordion></ng-content>
+  </mtl-accordion>
+
+  <mtl-accordion title="Código" [open]="true" *ngIf="showCode">
+    <ng-content select="[code]" content-accordion></ng-content>
+  </mtl-accordion>
+
+  <mtl-accordion title="Inputs" [open]="true" *ngIf="showInputs">
+    <ng-content select="[inputs]" content-accordion></ng-content>
+  </mtl-accordion>
+
+  <mtl-accordion title="Outputs" [open]="true" *ngIf="showOutputs">
+    <ng-content select="[outputs]" content-accordion></ng-content>
+  </mtl-accordion>
+
+  <mtl-accordion title="Translations" [open]="true" *ngIf="showTranslations">
+    <ng-content select="[translations]" content-accordion></ng-content>
+  </mtl-accordion>
+</div>

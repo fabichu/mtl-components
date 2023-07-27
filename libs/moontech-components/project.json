@@ -1,0 +1,51 @@
+{
+  "name": "moontech-components",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/moontech-components/src",
+  "prefix": "mtl",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/moontech-components/ng-package.json",
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/moontech-components/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/moontech-components/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/moontech-components/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/moontech-components/**/*.ts",
+          "libs/moontech-components/**/*.html"
+        ]
+      }
+    }
+  }
+}
