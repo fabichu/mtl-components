@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChildren, EventEmitter, Output, QueryList, TemplateRef } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, EventEmitter, Output, QueryList, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MtlTabItemComponent } from './ui/mtl-tab-item/mtl-tab-item.component';
 
@@ -8,6 +8,7 @@ import { MtlTabItemComponent } from './ui/mtl-tab-item/mtl-tab-item.component';
   imports: [CommonModule],
   templateUrl: './mtl-tabs.component.html',
   styleUrls: ['./mtl-tabs.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class MtlTabsComponent implements AfterViewInit {
   @ContentChildren(MtlTabItemComponent) tabItems: QueryList<MtlTabItemComponent> = {} as QueryList<MtlTabItemComponent>;

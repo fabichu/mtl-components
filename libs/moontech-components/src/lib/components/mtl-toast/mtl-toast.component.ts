@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MtlToastService } from './mtl-toast.service';
@@ -11,6 +11,7 @@ import { MtlToastPosition } from './types/toast';
   imports: [CommonModule],
   templateUrl: './mtl-toast.component.html',
   styleUrls: ['./mtl-toast.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('overlayAnimation', [
       state('void', style({

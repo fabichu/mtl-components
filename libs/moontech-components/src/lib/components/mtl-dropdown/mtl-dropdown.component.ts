@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output, forwardRef } from '@angular/core';
-import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms'
+import { AfterViewInit, Component, EventEmitter, Input, Output, ViewEncapsulation, forwardRef } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
 import { animate, group, state, style, transition, trigger } from '@angular/animations';
 import { MtlSelectItem } from './types/mtl-dropdown';
@@ -10,20 +10,14 @@ import { MtlSelectItem } from './types/mtl-dropdown';
   imports: [CommonModule, FormsModule],
   templateUrl: './mtl-dropdown.component.html',
   styleUrls: ['./mtl-dropdown.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('slideInOut', [
       state('open', style({ height: '*' })),
       state('close', style({ height: 0, paddingTop: 0, paddingBottom: 0, borderWidth: 0 })),
       transition('open <=> close', group([animate('200ms')]))
     ])
-  ],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => MtlDropdownComponent),
-      multi: true,
-    },
-  ],
+  ]
 })
 export class MtlDropdownComponent<T> implements AfterViewInit {
   @Input() options: MtlSelectItem<T>[] = [];

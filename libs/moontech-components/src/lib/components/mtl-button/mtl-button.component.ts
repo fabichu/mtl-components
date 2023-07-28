@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 enum FloatPosition {
   TOP_RIGHT = 'tr',
@@ -14,6 +14,7 @@ enum FloatPosition {
   imports: [CommonModule],
   templateUrl: './mtl-button.component.html',
   styleUrls: ['./mtl-button.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class MtlButtonComponent {
   @Input() type: 'default' | 'save' | 'danger' = 'default'
