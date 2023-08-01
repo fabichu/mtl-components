@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output, ViewEncapsulation, forwardRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
 import { animate, group, state, style, transition, trigger } from '@angular/animations';
@@ -9,7 +9,6 @@ import { MtlSelectItem } from './types/mtl-dropdown';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './mtl-dropdown.component.html',
-  styleUrls: ['./mtl-dropdown.component.scss'],
   encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('slideInOut', [
@@ -19,7 +18,7 @@ import { MtlSelectItem } from './types/mtl-dropdown';
     ])
   ]
 })
-export class MtlDropdownComponent<T> implements AfterViewInit {
+export class MtlDropdownComponent<T> implements OnInit {
   @Input() options: MtlSelectItem<T>[] = [];
   @Input() showFilter = true;
   @Input() label = '';
@@ -35,19 +34,18 @@ export class MtlDropdownComponent<T> implements AfterViewInit {
   public filter = ''
   public open = false
 
-  ngAfterViewInit(): void {
-      const initialValue = this.options.find(op => op.selected)
+  ngOnInit(): void {
+    const initialValue = this.options.find(op => op.selected)
 
-      if (!initialValue) return
+    if (!initialValue) return
 
-      this.selectedItem = initialValue
-      this.valueChange.emit(this.selectedItem.value)
+    this.selectedItem = initialValue
+    this.valueChange.emit(this.selectedItem.value)
   }
 
   filterOptions () {
     this.filteredOptions = this.options.filter(option => {
       const normalized = option.label.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
       return normalized.includes(this.filter.toLowerCase())
     })
   }
@@ -59,7 +57,6 @@ export class MtlDropdownComponent<T> implements AfterViewInit {
       selected: true
     }
     this.selectOption.emit(option)
-    console.log(this.valueChange);
     this.valueChange.emit(option.value)
   }
 
