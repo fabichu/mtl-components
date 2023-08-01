@@ -21,5 +21,5 @@ export class AppComponent {
 
   private readonly darkModeService = inject(DarkModeService)
 
-  public darkMode = this.darkModeService.$mode
+  public darkMode = this.darkModeService.mode
 }
