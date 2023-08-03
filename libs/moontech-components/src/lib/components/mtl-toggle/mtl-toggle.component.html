@@ -1,0 +1,19 @@
+<div class="mtl-toogle">
+  <div [ngClass]="{'flex-col': labelPosition === 'top' || labelPosition === 'bottom'}" class="flex gap-2 items-center">
+    <span *ngIf="showLabel && (labelPosition === 'left' || labelPosition === 'top')"
+      class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{ label }}</span>
+    <label class="relative inline-flex items-center cursor-pointer">
+      <input type="checkbox" value="" class="sr-only peer" [(ngModel)]="value" (ngModelChange)="selected()">
+      <div [ngClass]="{
+        'peer-checked:bg-green-500': type === 'success',
+        'peer-checked:bg-amber-500': type === 'warning',
+        'peer-checked:bg-red-500': type === 'error',
+        'peer-checked:bg-indigo-500': type === 'standard'}" class=" flex items-center bg-gray-300 w-11 h-6
+        peer-checked:after:translate-x-full after:transition-all rounded-full after:content~[''] after:absolute
+        after:aspect-square after:h-5/6 after:left-[2px] after:bg-white after:rounded-full">
+      </div>
+    </label>
+    <span *ngIf="showLabel && (labelPosition === 'right' || labelPosition === 'bottom')"
+      class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{ label }}</span>
+  </div>
+</div>

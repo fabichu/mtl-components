@@ -24,5 +24,13 @@ export * from './lib/components/mtl-button/mtl-button.component';
 export * from './lib/components/mtl-navbar/mtl-navbar.component';
 export * from './lib/components/mtl-navbar/ui/mtl-navbar-item/mtl-navbar-item.component';
 
+// Mtl Toggle
+export * from './lib/components/mtl-toggle/mtl-toggle.component'
+
+// Mtl Modal
+export * from './lib/components/mtl-modal/mtl-modal.component'
+export * from './lib/components/mtl-modal/mtl-modal.service'
+export * from './lib/components/mtl-modal/types/modal'
+
 // Services
 export * from './lib/shared/services/dark-mode.service';
