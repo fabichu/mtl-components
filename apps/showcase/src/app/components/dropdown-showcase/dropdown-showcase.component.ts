@@ -19,7 +19,6 @@ interface Example {
     MtlTabItemComponent
   ],
   templateUrl: './dropdown-showcase.component.html',
-  styleUrls: ['./dropdown-showcase.component.scss'],
 })
 export class DropdownShowcaseComponent {
   public optionsEj1: MtlSelectItem<string>[]

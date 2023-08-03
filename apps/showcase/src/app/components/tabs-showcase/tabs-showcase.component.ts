@@ -13,7 +13,6 @@ import { BaseShowcaseComponent } from '../base-showcase/base-showcase.component'
     BaseShowcaseComponent
   ],
   templateUrl: './tabs-showcase.component.html',
-  styleUrls: ['./tabs-showcase.component.scss'],
 })
 export class TabsShowcaseComponent {
   tabSelected ($event: number) {

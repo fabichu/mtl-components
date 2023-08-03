@@ -14,7 +14,6 @@ import { MtlAccordionComponent, MtlTabItemComponent, MtlTabsComponent } from '@m
     MtlTabItemComponent
   ],
   templateUrl: './accordion-showcase.component.html',
-  styleUrls: ['./accordion-showcase.component.scss']
 })
 export class AccordionShowcaseComponent {
 }

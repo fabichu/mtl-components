@@ -14,7 +14,6 @@ import { MtlButtonComponent, MtlTabItemComponent, MtlTabsComponent } from '@moon
     MtlButtonComponent,
   ],
   templateUrl: './button-showcase.component.html',
-  styleUrls: ['./button-showcase.component.scss'],
 })
 export class ButtonShowcaseComponent {
 }

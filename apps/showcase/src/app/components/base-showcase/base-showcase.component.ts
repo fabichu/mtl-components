@@ -7,7 +7,6 @@ import { MtlAccordionComponent } from '@moontech-components';
   standalone: true,
   imports: [CommonModule, MtlAccordionComponent],
   templateUrl: './base-showcase.component.html',
-  styleUrls: ['./base-showcase.component.scss'],
 })
 export class BaseShowcaseComponent {
   @Input() title = 'Title'

@@ -14,7 +14,6 @@ import { BaseShowcaseComponent } from '../base-showcase/base-showcase.component'
     MtlTabItemComponent
   ],
   templateUrl: './toast-showcase.component.html',
-  styleUrls: ['./toast-showcase.component.scss'],
 })
 export class ToastShowcaseComponent {
   private readonly toastService = inject(MtlToastService)
