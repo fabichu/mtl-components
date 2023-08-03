@@ -5,6 +5,10 @@ export class DarkModeService {
   public mode = signal<boolean>(false)
   
   toogle (): void {
-    this.mode.set(!this.mode())
+    localStorage.setItem('darkmode', (!this.mode()).toString())
+
+    const darkmode = localStorage.getItem('darkmode')
+
+    this.mode.set(darkmode === 'true')
   }
 }

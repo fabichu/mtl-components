@@ -22,4 +22,8 @@ export class AppComponent {
   private readonly darkModeService = inject(DarkModeService)
 
   public darkMode = this.darkModeService.mode
+
+  constructor () {
+    this.darkModeService.mode.set(localStorage.getItem('darkmode') === 'true')
+  }
 }
