@@ -1,0 +1,146 @@
+<div class="modal-showcase">
+  <mtl-base-showcase title="<mtl-modal></mtl-modal>" [showOutputs]="false">
+    <div examples>
+      <div class="flex flex-col gap-3">
+        <div class="example1">
+          <p class="text-indigo-500 dark:text-white font-bold">Ejemplo 1: Modal info</p>
+          <button (click)="toggleModal('modal1')" class="py-2 px-5 rounded-xl bg-green-500 text-white">Info</button>
+          <mtl-modal id="modal1" [big]="big">
+            <div class="sm:flex sm:items-start">
+              <div
+                class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100 sm:mx-0 sm:h-10 sm:w-10">
+                <i class="fa-solid fa-info text-indigo-600 text-xl"></i>
+              </div>
+              <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">Eveniet
+                  possimus eum</h3>
+                <div class="mt-2">
+                  <p class="text-sm text-gray-500 dark:text-white">
+                    Rem qui officia porro officiis. Amet eligendi veritatis aut ab autem reprehenderit labore tempore
+                    eligendi. Reprehenderit distinctio dolorem. Est reiciendis ut eaque sit. Adipisci tenetur porro
+                    dolorum ipsam qui dolorum eum qui beatae. Itaque enim quo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </mtl-modal>
+        </div>
+        <div class="example2">
+          <p class="text-indigo-500 dark:text-white font-bold">Ejemplo 2: Modal confirmar</p>
+          <button (click)="toggleModal('modal2')" class="py-2 px-5 rounded-xl bg-green-500 text-white">Confirm</button>
+          <mtl-modal id="modal2" [type]="MtlModalTypes.CONFIRM" [big]="big">
+            <div class="flex-col gap-4 sm:flex sm:items-center">
+              <div
+                class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                <i class="fa-solid fa-check text-green-500"></i>
+              </div>
+              <div class="mt-3 text-center sm:ml-4 sm:mt-0">
+                <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">Voluptas
+                  doloribus libero</h3>
+                <div class="mt-2">
+                  <p class="text-sm text-gray-500 dark:text-white">
+                    Itaque beatae alias quis odio. Ut qui molestiae molestias vitae corporis minima dolore. Architecto
+                    non id quis laboriosam id voluptas asperiores fugit quibusdam. Vero ut ut vel rerum nesciunt.
+                    Dolorem sed quo vitae corporis sunt nulla quae expedita quae.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </mtl-modal>
+        </div>
+        <div class="example3">
+          <p class="text-indigo-500 dark:text-white font-bold">Ejemplo 3: Modal sin botones con timeout</p>
+          <button (click)="toggleModal('modal3')" class="py-2 px-5 rounded-xl bg-green-500 text-white">Timeout</button>
+          <mtl-modal id="modal3" [type]="MtlModalTypes.NO_BUTTONS" [timeout]="3000" [big]="big">
+            <div class="flex-col gap-4 sm:flex sm:items-center">
+              <div class="mt-3 text-center sm:ml-4 sm:mt-0">
+                <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">Et sint
+                  explicabo</h3>
+                <div class="mt-2">
+                  <p class="text-sm text-gray-500 dark:text-white">
+                    Rerum optio est eos qui recusandae. Quod ex et corrupti sed ipsa voluptas cum. Quasi atque nihil
+                    maiores assumenda voluptatem vel ipsum. Voluptatem excepturi ea explicabo adipisci enim culpa
+                    expedita ut.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </mtl-modal>
+        </div>
+        <div class="example4">
+          <p class="text-indigo-500 dark:text-white font-bold">Ejemplo 4: Modal sin botones con clickOutside</p>
+          <button (click)="toggleModal('modal4')" class="py-2 px-5 rounded-xl bg-green-500 text-white">Click
+            outside</button>
+          <mtl-modal id="modal4" [type]="MtlModalTypes.NO_BUTTONS" [clickOutside]="true" [big]="big">
+            <div class="flex-col gap-4 sm:flex sm:items-center">
+              <div class="mt-3 text-center sm:ml-4 sm:mt-0">
+                <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">Et sint
+                  explicabo</h3>
+                <div class="mt-2">
+                  <p class="text-sm text-gray-500 dark:text-white">
+                    Rerum optio est eos qui recusandae. Quod ex et corrupti sed ipsa voluptas cum. Quasi atque nihil
+                    maiores assumenda voluptatem vel ipsum. Voluptatem excepturi ea explicabo adipisci enim culpa
+                    expedita ut.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </mtl-modal>
+        </div>
+        <div class="flex items-start">
+          <mtl-toggle label="BigModal" [showLabel]="true" labelPosition="top" (toggle)="big = !big"></mtl-toggle>
+        </div>
+      </div>
+    </div>
+    <div code></div>
+    <div inputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white dark:bg-indigo-600">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Valor por defecto</th>
+          </tr>
+        </thead>
+        <tbody class="dark:text-white">
+          <tr>
+            <td>id</td>
+            <td>Id del modal (Debe ser único)</td>
+            <td>string | null</td>
+            <td>null</td>
+          </tr>
+          <tr>
+            <td>open</td>
+            <td>Determina si el modal está abierto</td>
+            <td>boolean</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>big</td>
+            <td>Modal en modo grande</td>
+            <td>boolean</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>type</td>
+            <td>Tipo de modal</td>
+            <td>
+              <p>MtlModalType.INFO</p>
+              <p>MtlModalType.CONFIRM</p>
+              <p>MtlModalType.NO_BUTTONS</p>
+            </td>
+            <td>MtlModalType.INFO</td>
+          </tr>
+          <tr>
+            <td>timeout</td>
+            <td>Tiempo que tarda en desaparecer el modal (ms)</td>
+            <td>number</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div outputs></div>
+  </mtl-base-showcase>
+</div>
