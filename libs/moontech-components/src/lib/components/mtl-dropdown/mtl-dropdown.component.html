@@ -4,7 +4,7 @@
 
   <!-- Select -->
   <div
-    class="dropdown bg-transparent rounded border dark:border-gray-500 p-2 cursor-pointer flex justify-between items-center"
+    class="dropdown bg-white dark:bg-gray-800 rounded border dark:border-gray-500 p-2 cursor-pointer flex justify-between items-center"
     (click)="toogle()">
     <span [ngClass]="{'text-gray-500': this.selectedItem.value === undefined}">
       {{ this.selectedItem.label || placeholder}}
@@ -16,12 +16,12 @@
   </div>
 
   <!-- Options -->
-  <div class="options relative">
+  <div class="options relative z-50">
     <div [@slideInOut]="open ? 'open' : 'close'"
-      class="absolute dark:border-gray-500 w-full overflow-hidden z-50 mt-2 origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-md focus:outline-none"
+      class="absolute dark:border-gray-500 w-full overflow-hidden mt-1 origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-md focus:outline-none"
       [ngClass]="{'border': open}">
       <ul>
-        <li class="py-1 px-2 border-b cursor-default" *ngIf="showFilter">
+        <li class="py-1 px-2 border-b dark:border-b-gray-500 cursor-default" *ngIf="showFilter">
           <input type="text" class="w-full dark:bg-gray-800 focus:outline-none" placeholder="Filtrar..."
             [(ngModel)]="filter" (keyup)="filterOptions()" />
         </li>
