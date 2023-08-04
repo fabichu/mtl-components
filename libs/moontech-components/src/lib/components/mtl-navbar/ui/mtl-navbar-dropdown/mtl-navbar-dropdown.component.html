@@ -1,0 +1,16 @@
+<div mtlClickOutside (clickOutside)="open = false" [ngClass]="{'bg-gray-700': open}"
+  class="mtl-navbar-dropdown hover:bg-gray-700 h-full">
+  <div class="flex items-center gap-2 cursor-pointer h-full px-2 justify-center" (click)="open = !open">
+    <p>{{ text }}</p>
+    <i class="text-sm fa-solid fa-caret-down"></i>
+  </div>
+  <div class="relative w-full">
+    <div [ngClass]="{
+        'ease-out duration-300 max-h-96 shadow-md border border-gray-500': open,
+        'ease-in duration-200 max-h-0': !open
+      }"
+      class="dropdown-items z-50 absolute rounded-b-sm flex flex-col min-w-full bg-gray-700 text-gray-100 overflow-hidden">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
