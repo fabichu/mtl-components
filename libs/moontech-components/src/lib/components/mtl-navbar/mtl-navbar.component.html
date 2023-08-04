@@ -1,15 +1,13 @@
 <nav class="navbar bg-gray-800 text-white border-b-slate-700 border-b">
-  <div class="mx-auto max-w-7xl px-8 h-16 flex justify-between items-center gap-3">
-    <div class="flex justify-start gap-8 items-center">
+  <div class="mx-auto max-w-7xl px-8 flex justify-between items-center gap-3">
+    <div class="flex justify-start h-16 gap-8 items-center">
       <div class="logo flex items-center gap-4">
         <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
           alt="Your Company">
         <p class="text-2xl hidden md:block">Moontech</p>
       </div>
-      <div class="links space-x-4 text-lg font-bold hidden md:block">
-        <ng-container *ngFor="let link of mtlLinks">
-          <a class="px-3 py-2" [routerLink]="link.path">{{ link.text }}</a>
-        </ng-container>
+      <div class="links h-full text-lg font-bold hidden md:flex items-center [&>*]:h-full [&>*]:min-w-max">
+        <ng-content></ng-content>
       </div>
     </div>
     <div class="dark-mode hidden md:block">

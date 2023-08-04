@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DarkModeService, MtlNavbarComponent, MtlNavbarItemComponent } from '@moontech-components';
+import { DarkModeService, MtlNavbarComponent, MtlNavbarDropdownComponent, MtlNavbarItemComponent } from '@moontech-components';
 
 @Component({
   standalone: true,
@@ -9,7 +9,8 @@ import { DarkModeService, MtlNavbarComponent, MtlNavbarItemComponent } from '@mo
     CommonModule,
     RouterModule,
     MtlNavbarComponent,
-    MtlNavbarItemComponent
+    MtlNavbarItemComponent,
+    MtlNavbarDropdownComponent
   ],
   providers: [DarkModeService],
   selector: 'mtl-root',

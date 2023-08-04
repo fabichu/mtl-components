@@ -1,7 +1,6 @@
-import { Component, ContentChildren, QueryList, ViewEncapsulation, inject } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DarkModeService } from '../../shared/services/dark-mode.service';
-import { MtlNavbarItemComponent } from './ui/mtl-navbar-item/mtl-navbar-item.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -9,7 +8,6 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [
     CommonModule,
-    MtlNavbarItemComponent,
     RouterModule
   ],
   templateUrl: './mtl-navbar.component.html',
@@ -17,8 +15,6 @@ import { RouterModule } from '@angular/router';
 })
 export class MtlNavbarComponent {
   private readonly darkModeService = inject(DarkModeService)
-
-  @ContentChildren(MtlNavbarItemComponent) mtlLinks: QueryList<MtlNavbarItemComponent> = {} as QueryList<MtlNavbarItemComponent>;
 
   public darkMode = this.darkModeService.mode
 
