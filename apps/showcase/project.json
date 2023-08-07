@@ -16,10 +16,14 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/showcase/tsconfig.app.json",
         "assets": ["apps/showcase/src/favicon.ico", "apps/showcase/src/assets"],
-        "styles": ["apps/showcase/src/styles.scss"],
+        "styles": [
+          "apps/showcase/src/styles.scss",
+          "node_modules/prismjs/themes/prism.css"
+        ],
         "scripts": [
           "node_modules/@fortawesome/fontawesome-free/js/fontawesome.js",
-          "node_modules/@fortawesome/fontawesome-free/js/all.js"
+          "node_modules/@fortawesome/fontawesome-free/js/all.js",
+          "node_modules/prismjs/prism.js"
         ]
       },
       "configurations": {
