@@ -24,5 +24,9 @@ export const appRoutes: Route[] = [
   {
     path: 'toggle',
     loadComponent: async () => (await import('./components/toggle-showcase/toggle-showcase.component')).ToggleShowcaseComponent
+  },
+  {
+    path: 'modal',
+    loadComponent: async () => (await import('./components/modal-showcase/modal-showcase.component')).ModalShowcaseComponent
   }
 ];
