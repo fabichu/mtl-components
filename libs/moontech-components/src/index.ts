@@ -33,6 +33,10 @@ export * from './lib/components/mtl-modal/mtl-modal.component'
 export * from './lib/components/mtl-modal/mtl-modal.service'
 export * from './lib/components/mtl-modal/types/modal'
 
+// Mtl Sidebar
+export * from './lib/components/mtl-sidebar/mtl-sidebar.component'
+export * from './lib/components/mtl-sidebar/types/mtl-sidebar-item'
+
 // Services
 export * from './lib/shared/services/dark-mode.service';
 

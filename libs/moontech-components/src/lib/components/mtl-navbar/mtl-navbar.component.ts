@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, inject } from '@angular/core';
+import { Component, Input, ViewEncapsulation, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DarkModeService } from '../../shared/services/dark-mode.service';
 import { RouterModule } from '@angular/router';
@@ -15,6 +15,8 @@ import { RouterModule } from '@angular/router';
 })
 export class MtlNavbarComponent {
   private readonly darkModeService = inject(DarkModeService)
+
+  @Input() showLinks = true
 
   public darkMode = this.darkModeService.mode
 

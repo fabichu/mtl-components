@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DarkModeService, MtlNavbarComponent, MtlNavbarDropdownComponent, MtlNavbarItemComponent } from '@moontech-components';
+import { DarkModeService, MtlNavbarComponent, MtlNavbarDropdownComponent, MtlNavbarItemComponent, MtlSidebarComponent, MtlSidebarItem } from '@moontech-components';
 
 @Component({
   standalone: true,
@@ -10,7 +10,8 @@ import { DarkModeService, MtlNavbarComponent, MtlNavbarDropdownComponent, MtlNav
     RouterModule,
     MtlNavbarComponent,
     MtlNavbarItemComponent,
-    MtlNavbarDropdownComponent
+    MtlNavbarDropdownComponent,
+    MtlSidebarComponent
   ],
   providers: [DarkModeService],
   selector: 'mtl-root',
@@ -18,13 +19,46 @@ import { DarkModeService, MtlNavbarComponent, MtlNavbarDropdownComponent, MtlNav
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'showcase';
-
   private readonly darkModeService = inject(DarkModeService)
 
   public darkMode = this.darkModeService.mode
+  public sideBarItems: MtlSidebarItem[]
 
   constructor () {
     this.darkModeService.mode.set(localStorage.getItem('darkmode') === 'true')
+
+    this.sideBarItems = [
+      { 
+        title: 'Datos', 
+        children: [
+          { text: 'Accordion', path: '/accordion' },
+          { text: 'Modal', path: '/modal' },
+          { text: 'Tabs', path: '/tabs' }
+        ]
+      },
+      {
+        title: 'Directivas',
+        children: [
+          { text: 'Click Outside', path: '' }
+        ]
+      },
+      {
+        title: 'Formularios',
+        children: [
+          { text: 'Button', path: '/button' },
+          { text: 'Dropdown', path: '/dropdown' },
+          { text: 'Toggle', path: '/toggle' }
+        ]
+      },
+      {
+        title: 'Utilidades',
+      },
+      {
+        title: 'Otros',
+        children: [
+          { text: 'Toast', path: '/toast' },
+        ]
+      }
+    ]
   }
 }

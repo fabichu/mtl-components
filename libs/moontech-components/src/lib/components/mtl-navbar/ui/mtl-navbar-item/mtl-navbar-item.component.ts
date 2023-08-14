@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `<div class="mtl-navbar-item w-full hover:bg-gray-800 h-full px-3 py-2 flex items-center">
-    <a class="h-full flex items-center" [routerLink]="path">{{ text }}</a>
+    <a class="h-full flex items-center w-full" [routerLink]="path">{{ text }}</a>
   </div>`,
 })
 export class MtlNavbarItemComponent {
