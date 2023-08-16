@@ -33,7 +33,8 @@ export class AppComponent {
         children: [
           { text: 'Accordion', path: '/accordion' },
           { text: 'Modal', path: '/modal' },
-          { text: 'Tabs', path: '/tabs' }
+          { text: 'Tabs', path: '/tabs' },
+          { text: 'Card', path: '/card' }
         ]
       },
       {

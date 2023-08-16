@@ -37,6 +37,9 @@ export * from './lib/components/mtl-modal/types/modal'
 export * from './lib/components/mtl-sidebar/mtl-sidebar.component'
 export * from './lib/components/mtl-sidebar/types/mtl-sidebar-item'
 
+// Mtl Card
+export * from './lib/components/mtl-card/mtl-card.component'
+
 // Services
 export * from './lib/shared/services/dark-mode.service';
 

@@ -28,5 +28,9 @@ export const appRoutes: Route[] = [
   {
     path: 'modal',
     loadComponent: async () => (await import('./components/modal-showcase/modal-showcase.component')).ModalShowcaseComponent
+  },
+  {
+    path: 'card',
+    loadComponent: async () => (await import('./components/card-showcase/card-showcase.component')).CardShowcaseComponent
   }
 ];
