@@ -1,0 +1,11 @@
+<div class="mtl-card">
+    <div class="border dark:border-gray-400 rounded-md w-full mb-3 bg-white dark:bg-gray-700 shadow-md">
+      <div *ngIf="showTitle" class="px-5 py-3 rounded-t-md font-bold text-xl bg-indigo-500 text-white">
+        <ng-content select="[card-title]"></ng-content>
+      </div>
+      <div class="px-5 py-3 flex flex-col gap-3">
+        <ng-content select="[card-content]"></ng-content>
+      </div>
+    </div>
+  </div>
+  

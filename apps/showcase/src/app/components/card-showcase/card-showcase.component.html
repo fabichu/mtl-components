@@ -1,0 +1,92 @@
+<div class="card-showcase">
+  <mtl-base-showcase title="<mtl-card></mtl-card>" [showOutputs]="false">
+    <div examples class="flex flex-col gap-3">
+      <div class="example1">
+        <p class="text-indigo-500 font-bold">Ejemplo 1: Estándar</p>
+        <mtl-card>
+          <h1 card-title>Título</h1>
+          <span card-content
+            >Contenido que cuenta con un título para visualizar etcera</span
+          >
+        </mtl-card>
+      </div>
+      <div class="example2">
+        <p class="text-indigo-500 font-bold">Ejemplo 2: Sin bloque de titulo</p>
+        <mtl-card [showTitle]="false">
+          <span card-content>
+            Contenido de ejemplo sin titulo para visualizar el aspecto etc etc
+          </span>
+        </mtl-card>
+      </div>
+    </div>
+    <div code>
+      <mtl-tabs>
+        <mtl-tab-item title="HTML">
+          <pre>
+            <code>
+&lt;div examples class=&quot;flex flex-col gap-3&quot;&gt;
+  &lt;div class=&quot;example1&quot;&gt;
+    &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 1: Estándar&lt;/p&gt;
+    &lt;mtl-card&gt;
+      &lt;h1 card-title&gt;Título&lt;/h1&gt;
+      &lt;span card-content&gt;Contenido que cuenta con un título para visualizar etcera&lt;/span&gt;
+    &lt;/mtl-card&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;example2&quot;&gt;
+    &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 2: Sin bloque de título&lt;/p&gt;
+    &lt;mtl-card [showTitle]=&quot;false&quot;&gt;
+      &lt;span card-content&gt;Contenido de ejemplo sin título para visualizar el aspecto etc etc&lt;/span&gt;
+    &lt;/mtl-card&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+              </code>
+          </pre>
+        </mtl-tab-item>
+        <mtl-tab-item title="TS">
+          <pre>
+                    <code>
+import &#123; Component &#125; from '@angular/core';
+import &#123; CommonModule &#125; from '@angular/common';
+import &#123; MtlCardComponent &#125; from '@moontech-components';
+
+@Component(&#123;
+    selector: 'mtl-card-showcase',
+    standalone: true,
+    imports: [
+    CommonModule,
+    MtlCardComponent
+    ],
+    templateUrl: './card-showcase.component.html',
+    
+&#125;)
+export class CardShowcaseComponent &#123;
+&#125;
+                    </code>
+                </pre>
+        </mtl-tab-item>
+      </mtl-tabs>
+    </div>
+    <div inputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white dark:bg-indigo-600">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Valor por defecto</th>
+            <th>Posibles valores</th>
+          </tr>
+        </thead>
+        <tbody class="dark:text-white">
+          <tr>
+            <td>showTitle</td>
+            <td>Muestra el título del card</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mtl-base-showcase>
+</div>
