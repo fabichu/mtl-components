@@ -1,0 +1,19 @@
+<div class="mtl-textarea">
+  <label *ngIf="label">{{label + (required ? ' *' : '')}}</label>
+  <textarea class="block px-3 py-2 border rounded-md shadow-sm ring-0 outline-none disabled:cursor-not-allowed 
+  disabled:bg-gray-50 dark:bg-slate-600" 
+  [ngClass]="{ 'resize-none': !resize}"
+  [ngModel]="value"
+  [readonly]="readonly"
+  (ngModelChange)="onChange($event)"
+  [placeholder]="placeholder"
+  [minlength]="minlength"
+  [maxlength]="maxlength"
+  [rows]="rows"
+  [cols]="cols"
+  >{{ value }}</textarea>
+  <div *ngIf="validate">
+  <p class="validation-message text-xs text-red-600" *ngIf="isValid === false">El texto tiene que ser mayor de {{ minlength }}</p>
+  <p class="validation-message text-xs text-green-600" *ngIf="isValid === true">¡Correcto!</p>
+  </div>
+</div>
