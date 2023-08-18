@@ -37,6 +37,9 @@ export * from './lib/components/mtl-modal/types/modal'
 export * from './lib/components/mtl-sidebar/mtl-sidebar.component'
 export * from './lib/components/mtl-sidebar/types/mtl-sidebar-item'
 
+//Mtl textarea
+export * from './lib/components/mtl-textarea/mtl-textarea.component'
+
 // Services
 export * from './lib/shared/services/dark-mode.service';
 

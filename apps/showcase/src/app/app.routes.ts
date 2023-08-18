@@ -28,5 +28,9 @@ export const appRoutes: Route[] = [
   {
     path: 'modal',
     loadComponent: async () => (await import('./components/modal-showcase/modal-showcase.component')).ModalShowcaseComponent
+  },
+  {
+    path: 'textarea',
+    loadComponent: async () => (await import('./components/textarea-showcase/textarea-showcase.component')).TextareaShowcaseComponent
   }
 ];
