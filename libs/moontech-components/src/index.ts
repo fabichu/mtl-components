@@ -46,6 +46,9 @@ export * from './lib/components/mtl-badge/types/mtl-badge';
 // Mtl Card
 export * from './lib/components/mtl-card/mtl-card.component'
 
+//Mtl textarea
+export * from './lib/components/mtl-textarea/mtl-textarea.component'
+
 // Services
 export * from './lib/shared/services/dark-mode.service';
 

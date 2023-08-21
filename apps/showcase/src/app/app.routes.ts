@@ -36,5 +36,9 @@ export const appRoutes: Route[] = [
   {
     path: 'card',
     loadComponent: async () => (await import('./components/card-showcase/card-showcase.component')).CardShowcaseComponent
+  }, 
+  {
+    path: 'textarea',
+    loadComponent: async () => (await import('./components/textarea-showcase/textarea-showcase.component')).TextareaShowcaseComponent
   }
 ];

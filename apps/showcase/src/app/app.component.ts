@@ -49,7 +49,8 @@ export class AppComponent {
         children: [
           { text: 'Button', path: '/button' },
           { text: 'Dropdown', path: '/dropdown' },
-          { text: 'Toggle', path: '/toggle' }
+          { text: 'Toggle', path: '/toggle' },
+          { text: 'Textarea', path: '/textarea' }
         ]
       },
       {

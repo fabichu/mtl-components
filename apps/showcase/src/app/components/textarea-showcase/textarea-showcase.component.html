@@ -1,0 +1,218 @@
+<div class="textarea-showcase">
+  <mtl-base-showcase title="<mtl-textarea></mtl-textarea>" [showOutputs]="false">
+    <div examples>
+      <div class="example1">
+        <p class="text-indigo-500 dark:text-white font-bold mb-1">Ejemplo 1: estándar</p>
+        <mtl-textarea label="label 1" placeholder="ejemplo 1" [(value)]="valueExample1" [resize]="true"></mtl-textarea>
+        <span>Valor: {{ valueExample1 }} </span>
+      </div>
+      <br>
+
+      <div class="example2">
+        <p class="text-indigo-500 dark:text-white font-bold mb-1">Ejemplo 2: Valor inicial</p>
+        <mtl-textarea label="label nueva" placeholder="ejemplo 2" [(value)]="valueExample2" [resize]="true"></mtl-textarea>
+        <span>Valor: {{ valueExample2 }}</span>
+      </div>
+      <br>
+
+      <div class="example3">
+        <p class="text-indigo-500 dark:text-white font-bold mb-1">Ejemplo 3: validación (mayor de 5 y menor de 10)</p>
+        <mtl-textarea label="label validación" placeholder="ejemplo 3" [(value)]="valueExample3" [resize]="true" [validate]="true" [maxlength]="10"
+        [minlength]="5"></mtl-textarea>
+        <span>Valor: {{ valueExample3 }} </span>
+      </div>
+      <br>
+
+      <div class="example5">
+        <p class="text-indigo-500 dark:text-white font-bold mb-1">Ejemplo 4: readonly</p>
+        <mtl-textarea label="label readonly" [readonly]="true" placeholder="ejemplo 4" [resize]="true" [(value)]="valueExample4"></mtl-textarea>
+        <span>Valor: {{ valueExample4 }}</span>
+      </div> 
+      <br>
+
+      <div class="example7">
+        <p class="text-indigo-500 dark:text-white font-bold mb-1">Ejemplo 5: sin resize</p>
+        <mtl-textarea placeholder="ejemplo 5" [resize]="false" [(value)]="valueExample5"></mtl-textarea>
+        <span>Valor: {{ valueExample5 }}</span>
+      </div> 
+      <br>
+
+      <div class="example6">
+        <p class="text-indigo-500 dark:text-white font-bold mb-1">Ejemplo 6: rows y cols</p>
+        <mtl-textarea label="label tamaño" placeholder="ejemplo 6" [(value)]="valueExample6" [rows]="5" [cols]="12"></mtl-textarea>
+        <span>Valor: {{ valueExample6 }}</span>
+      </div> 
+
+    </div>
+
+    <div code>
+      <mtl-tabs>
+        <mtl-tab-item title="HTML">
+          <pre>
+            <code>
+&lt;div examples&gt;
+  &lt;div class="example1"&gt;
+    &lt;p class="text-indigo-500 dark:text-white font-bold mb-1"&gt;Ejemplo 1: estándar&lt;/p&gt;
+    &lt;mtl-textarea label="label 1" placeholder="ejemplo 1" [(value)]="valueExample1" [resize]="true"&gt;
+    &lt;/mtl-textarea&gt;
+    &lt;span&gt;Valor: &#123;&#123; valueExample1 &#125;&#125; &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;br&gt;
+
+  &lt;div class="example2"&gt;
+    &lt;p class="text-indigo-500 dark:text-white font-bold mb-1"&gt;Ejemplo 2: Valor inicial&lt;/p&gt;
+    &lt;mtl-textarea label="label nueva" placeholder="ejemplo 2" [(value)]="valueExample2" [resize]="true"&gt;
+    &lt;/mtl-textarea&gt;
+    &lt;span&gt;Valor: &#123;&#123; valueExample2 &#125;&#125;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;br&gt;
+
+  &lt;div class="example3"&gt;
+    &lt;p class="text-indigo-500 dark:text-white font-bold mb-1"&gt;Ejemplo 3: validación (mayor de 5 
+    y menor de 10)&lt;/p&gt;
+    &lt;mtl-textarea label="label validación" placeholder="ejemplo 3" [(value)]="valueExample3" 
+      [resize]="true" [validate]="true" [maxlength]="10" [minlength]="5"&gt;
+    &lt;/mtl-textarea&gt;
+    &lt;span&gt;Valor: &#123;&#123; valueExample3 &#125;&#125; &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;br&gt;
+
+  &lt;div class="example5"&gt;
+    &lt;p class="text-indigo-500 dark:text-white font-bold mb-1"&gt;Ejemplo 4: readonly&lt;/p&gt;
+    &lt;mtl-textarea label="label readonly" [readonly]="true" placeholder="ejemplo 4" 
+    [resize]="true" [(value)]="valueExample4"&gt;
+    &lt;/mtl-textarea&gt;
+    &lt;span&gt;Valor: &#123;&#123; valueExample4 &#125;&#125;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;br&gt;
+
+  &lt;div class="example7"&gt;
+    &lt;p class="text-indigo-500 dark:text-white font-bold mb-1"&gt;Ejemplo 5: sin resize&lt;/p&gt;
+    &lt;mtl-textarea placeholder="ejemplo 5" [resize]="false" [(value)]="valueExample5"&gt;
+    &lt;/mtl-textarea&gt;
+    &lt;span&gt;Valor: &#123;&#123; valueExample5 &#125;&#125;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;br&gt;
+
+  &lt;div class="example6"&gt;
+    &lt;p class="text-indigo-500 dark:text-white font-bold mb-1"&gt;Ejemplo 6: rows y cols&lt;/p&gt;
+    &lt;mtl-textarea label="label tamaño" placeholder="ejemplo 6" [(value)]="valueExample6" 
+    [rows]="5" [cols]="12"&gt;
+    &lt;/mtl-textarea&gt;
+    &lt;span&gt;Valor: &#123;&#123; valueExample6 &#125;&#125;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;            
+            </code>
+          </pre>
+        </mtl-tab-item>
+        <mtl-tab-item title="TS">
+          <pre>
+            <code>
+import &#123; Component, inject &#125; from '@angular/core';
+import &#123; CommonModule &#125; from '@angular/common';
+import &#123; MtlTextareaComponent &#125; from '@moontech-components';
+
+@Component(&#123;
+  selector: 'mtl-textarea-showcase',
+  standalone: true,
+  imports: [
+  CommonModule,
+    MtlTextareaComponent
+  ],
+  templateUrl: './textarea-showcase.component.html',
+&#125;)
+export class TextareaShowcaseComponent &#123; 
+
+  valueExample1 = "";
+  valueExample2 = "Valor de inicio";
+  valueExample3 = "";
+  valueExample4 = "Este texto es de solo lectura";
+  valueExample5 = "No puedes modificar el tamaño de este textarea";
+  valueExample6 = "";
+&#125;
+            </code>
+          </pre>
+        </mtl-tab-item>
+      </mtl-tabs>
+
+    </div>
+    <div inputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white dark:bg-indigo-600">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Valor por defecto</th>
+            <th>Posibles valores</th>
+          </tr>
+        </thead>
+        <tbody class="dark:text-white">
+          <tr>
+            <td>placeholder</td>
+            <td>Texto cuando el input está vacío</td>
+            <td>string</td>
+            <td>''</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>label</td>
+            <td>Label asociado al input</td>
+            <td>string</td>
+            <td>undefined</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>readonly</td>
+            <td>Indica si está en modo consulta</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>maxlength</td>
+            <td>Máxima longitud del textarea</td>
+            <td>number</td>
+            <td>undefined</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>minlength</td>
+            <td>Mínima longitud del textarea</td>
+            <td>number</td>
+            <td>undefined</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>validate</td>
+            <td>Permite la validación del textarea</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>rows</td>
+            <td>Número de filas del textarea</td>
+            <td>number</td>
+            <td>10</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>cols</td>
+            <td>Número de columnas del textarea</td>
+            <td>number</td>
+            <td>60</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>resize</td>
+            <td>Tamaño del textarea</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mtl-base-showcase>
+</div>
