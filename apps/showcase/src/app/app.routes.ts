@@ -32,5 +32,9 @@ export const appRoutes: Route[] = [
   {
     path: 'badge',
     loadComponent: async () => (await import('./components/badge-showcase/badge-showcase.component')).BadgeShowcaseComponent
+  },
+  {
+    path: 'card',
+    loadComponent: async () => (await import('./components/card-showcase/card-showcase.component')).CardShowcaseComponent
   }
 ];

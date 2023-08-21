@@ -35,6 +35,7 @@ export class AppComponent {
           { text: 'Modal', path: '/modal' },
           { text: 'Tabs', path: '/tabs' },
           { text: 'Badge', path: '/badge' },
+          { text: 'Card', path: '/card' }
         ]
       },
       {
