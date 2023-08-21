@@ -16,4 +16,7 @@ import { MtlButtonComponent, MtlTabItemComponent, MtlTabsComponent } from '@moon
   templateUrl: './button-showcase.component.html',
 })
 export class ButtonShowcaseComponent {
+  clickAction (): void {
+    console.log('Button clicked');
+  }
 }

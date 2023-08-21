@@ -1,14 +1,15 @@
 <div class="mtl-button">
-  <button class="shadow-md text-white" [ngClass]="{
+  <button [disabled]="disabled" (click)="click($event)" class="shadow-md text-white" [ngClass]="{
     'bg-blue-500': type === 'default',
     'bg-red-500': type === 'danger',
     'bg-green-500': type === 'save',
+    'bg-gray-400': disabled,
     'rounded-full fixed px-5 aspect-square': float,
     'rounded-lg py-2 px-4': !float,
-    'top-7': floatPosition === 'tr' || floatPosition === 'tl',
-    'bottom-7': floatPosition === 'br' || floatPosition === 'bl',
-    'right-7': floatPosition === 'br' || floatPosition === 'tr',
-    'left-7': floatPosition === 'bl' || floatPosition === 'tl',
+    'top-7': floatPosition === FloatConstants.TOP_RIGHT || floatPosition === FloatConstants.TOP_LEFT,
+    'bottom-7': floatPosition === FloatConstants.BOTTOM_RIGHT || floatPosition === FloatConstants.BOTTOM_LEFT,
+    'right-7': floatPosition === FloatConstants.BOTTOM_RIGHT || floatPosition === FloatConstants.TOP_RIGHT,
+    'left-7': floatPosition === FloatConstants.BOTTOM_LEFT || floatPosition === FloatConstants.TOP_LEFT,
     'text-xs': size === 'small',
     'text-2xl': size === 'big',
   }">

@@ -1,12 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ViewEncapsulation } from '@angular/core';
-
-enum FloatPosition {
-  TOP_RIGHT = 'tr',
-  TOP_LEFT = 'tl',
-  BOTTOM_RIGHT = 'br',
-  BOTTOM_LEFT = 'bl'
-}
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { MtlButtonFloatPosition } from './types/mtl-button';
 
 @Component({
   selector: 'mtl-button',
@@ -19,6 +13,15 @@ enum FloatPosition {
 export class MtlButtonComponent {
   @Input() type: 'default' | 'save' | 'danger' = 'default'
   @Input() float = false
-  @Input() floatPosition: FloatPosition = FloatPosition.BOTTOM_RIGHT
+  @Input() floatPosition: MtlButtonFloatPosition = MtlButtonFloatPosition.BOTTOM_RIGHT
+  @Input() disabled = false
   @Input() size: 'big' | 'small' | 'medium' = 'medium'
+
+  @Output() action = new EventEmitter<MouseEvent>()
+
+  public FloatConstants = MtlButtonFloatPosition
+
+  click (event: MouseEvent): void {
+    this.action.emit(event)
+  }
 }

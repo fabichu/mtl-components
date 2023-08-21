@@ -3,21 +3,25 @@
     <div examples class="flex flex-col gap-3">
       <div class="example1">
         <p class="text-indigo-500 font-bold">Ejemplo 1: Tipo 'default', size 'big'</p>
-        <mtl-button type="default" size="big">Texto</mtl-button>
+        <mtl-button (action)="clickAction()" type="default" size="big">Texto</mtl-button>
       </div>
       <div class="example2">
         <p class="text-indigo-500 font-bold">Ejemplo 2: Tipo 'save', size 'medium'</p>
-        <mtl-button type="save" size="medium">Texto</mtl-button>
+        <mtl-button (action)="clickAction()" type="save" size="medium">Texto</mtl-button>
       </div>
       <div class="example3">
         <p class="text-indigo-500 font-bold">Ejemplo 3: Tipo 'danger', size 'small'</p>
-        <mtl-button type="danger" size="small">Texto</mtl-button>
+        <mtl-button (action)="clickAction()" type="danger" size="small">Texto</mtl-button>
       </div>
-      <div class="example3">
+      <div class="example4">
         <p class="text-indigo-500 font-bold">Ejemplo 4: Float (Esquina inferior derecha)</p>
-        <mtl-button [float]="true" type="danger">
+        <mtl-button (action)="clickAction()" [float]="true" type="danger">
           <i class="fa-solid fa-user"></i>
         </mtl-button>
+      </div>
+      <div class="example5">
+        <p class="text-indigo-500 font-bold">Ejemplo 5: Disabled</p>
+        <mtl-button [disabled]="true" (action)="clickAction()">Texto</mtl-button>
       </div>
     </div>
 
@@ -26,35 +30,27 @@
         <mtl-tab-item title="HTML">
           <pre>
             <code>
-&lt;div class=&quot;example1 flex flex-col gap-3&quot;&gt;
-  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 1: Sin valor inicial&lt;/p&gt;
-  &lt;mtl-dropdown [options]=&quot;optionsEj1&quot; [(value)]=&quot;value1&quot;&gt;&lt;/mtl-dropdown&gt;
-  &lt;p&gt;Valor: &#123;&#123; 'value1' &#125;&#125;&lt;/p&gt;
+&lt;div class=&quot;example1&quot;&gt;
+  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 1: Tipo 'default', size 'big'&lt;/p&gt;
+  &lt;mtl-button (action)=&quot;clickAction()&quot; type=&quot;default&quot; size=&quot;big&quot;&gt;Texto&lt;/mtl-button&gt;
 &lt;/div&gt;
-&lt;div class=&quot;example2 flex flex-col gap-3&quot;&gt;
-  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 2: Con valor inicial&lt;/p&gt;
-  &lt;mtl-dropdown [options]=&quot;optionsEj2&quot; [(value)]=&quot;value2&quot;&gt;&lt;/mtl-dropdown&gt;
-  &lt;p&gt;Valor: &#123;&#123; 'value2' &#125;&#125;&lt;/p&gt;
+&lt;div class=&quot;example2&quot;&gt;
+  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 2: Tipo 'save', size 'medium'&lt;/p&gt;
+  &lt;mtl-button (action)=&quot;clickAction()&quot; type=&quot;save&quot; size=&quot;medium&quot;&gt;Texto&lt;/mtl-button&gt;
 &lt;/div&gt;
-&lt;div class=&quot;example3 flex flex-col gap-3&quot;&gt;
-  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 3: Sin valor inicial con objetos&lt;/p&gt;
-  &lt;mtl-dropdown [options]=&quot;optionsEj3&quot; [(value)]=&quot;value3&quot;&gt;&lt;/mtl-dropdown&gt;
-  &lt;p&gt;Valor: &#123;&#123; 'value3' | json &#125;&#125;&lt;/p&gt;
+&lt;div class=&quot;example3&quot;&gt;
+  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 3: Tipo 'danger', size 'small'&lt;/p&gt;
+  &lt;mtl-button (action)=&quot;clickAction()&quot; type=&quot;danger&quot; size=&quot;small&quot;&gt;Texto&lt;/mtl-button&gt;
 &lt;/div&gt;
-&lt;div class=&quot;example4 flex flex-col gap-3&quot;&gt;
-  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 4: Con valor inicial con objetos&lt;/p&gt;
-  &lt;mtl-dropdown [options]=&quot;optionsEj4&quot; [(value)]=&quot;value4&quot;&gt;&lt;/mtl-dropdown&gt;
-  &lt;p&gt;Valor: &#123;&#123; 'value4' | json &#125;&#125;&lt;/p&gt;
+&lt;div class=&quot;example4&quot;&gt;
+  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 4: Float (Esquina inferior derecha)&lt;/p&gt;
+  &lt;mtl-button (action)=&quot;clickAction()&quot; [float]=&quot;true&quot; type=&quot;danger&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-user&quot;&gt;&lt;/i&gt;
+  &lt;/mtl-button&gt;
 &lt;/div&gt;
-&lt;div class=&quot;example5 flex flex-col gap-3&quot;&gt;
-  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 5: Con label&lt;/p&gt;
-  &lt;mtl-dropdown [options]=&quot;optionsEj1&quot; label=&quot;Label&quot; [(value)]=&quot;value5&quot;&gt;&lt;/mtl-dropdown&gt;
-  &lt;p&gt;Valor: &#123;&#123; 'value5' &#125;&#125;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;example6 flex flex-col gap-3&quot;&gt;
-  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 6: Sin filtro&lt;/p&gt;
-  &lt;mtl-dropdown [options]=&quot;optionsEj1&quot; [showFilter]=&quot;false&quot; [(value)]=&quot;value6&quot;&gt;&lt;/mtl-dropdown&gt;
-  &lt;p&gt;Valor: &#123;&#123; 'value6' &#125;&#125;&lt;/p&gt;
+&lt;div class=&quot;example5&quot;&gt;
+  &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 5: Disabled&lt;/p&gt;
+  &lt;mtl-button [disabled]=&quot;true&quot; (action)=&quot;clickAction()&quot;&gt;Texto&lt;/mtl-button&gt;
 &lt;/div&gt;
             </code>
           </pre>
@@ -64,67 +60,115 @@
             <code>
 import &#123; Component &#125; from '@angular/core';
 import &#123; CommonModule &#125; from '@angular/common';
-import &#123; BaseShowcaseComponent &#125; from '../base-showcase/base-showcase.component';
-import &#123; MtlDropdownComponent, MtlSelectItem, MtlTabItemComponent, MtlTabsComponent &#125; from '@moontech-components';
-
-interface Example &#123;
-  prop1: string
-  prop2: string
-&#125;
+import &#123; MtlButtonComponent &#125; from '@moontech-components';
 
 @Component(&#123;
-  selector: 'mtl-dropdown-showcase',
+  selector: 'mtl-button-showcase',
   standalone: true,
   imports: [
-    CommonModule,
-    BaseShowcaseComponent,
-    MtlDropdownComponent,
-    MtlTabsComponent,
-    MtlTabItemComponent
+    CommonModule, 
+    MtlButtonComponent,
   ],
-  templateUrl: './dropdown-showcase.component.html',
-  styleUrls: ['./dropdown-showcase.component.scss'],
+  templateUrl: './button-showcase.component.html',
 &#125;)
-export class DropdownShowcaseComponent &#123;
-  public optionsEj1: MtlSelectItem&lt;string&gt;[]
-  public optionsEj2: MtlSelectItem&lt;string&gt;[]
-  public optionsEj3: MtlSelectItem&lt;Example&gt;[]
-  public optionsEj4: MtlSelectItem&lt;Example&gt;[]
-
-  public value1 = ''
-  public value2 = ''
-  public value3 = &#123;&#125;
-  public value4 = &#123;&#125;
-  public value5 = ''
-  public value6 = ''
-
-  constructor () &#123;
-    this.optionsEj1 = [
-      &#123; label: 'opción 1', value: 'option1'&#125;,
-      &#123; label: 'opción 2', value: 'option2'&#125;,
-      &#123; label: 'opción 3', value: 'option3'&#125;
-    ]
-    this.optionsEj2 = [
-      &#123; label: 'opción 1', value: 'option1'&#125;,
-      &#123; label: 'opción 2', value: 'option2'&#125;,
-      &#123; label: 'opción 3', value: 'option3', selected: true&#125;
-    ]
-    this.optionsEj3 = [
-      &#123; label: 'opción 1', value: &#123; prop1: 'Hola 1', prop2: 'Mundo 1' &#125;,
-      &#123; label: 'opción 2', value: &#123; prop1: 'Hola 2', prop2: 'Mundo 2' &#125;,
-      &#123; label: 'opción 3', value: &#123; prop1: 'Hola 3', prop2: 'Mundo 3' &#125;
-    ]
-    this.optionsEj4 = [
-      &#123; label: 'opción 1', value: &#123; prop1: 'Hola 1', prop2: 'Mundo 1' &#125;,
-      &#123; label: 'opción 2', value: &#123; prop1: 'Hola 2', prop2: 'Mundo 2' &#125;,
-      &#123; label: 'opción 3', value: &#123; prop1: 'Hola 3', prop2: 'Mundo 3' &#125;, selected: true&#125;
-    ]
+export class ButtonShowcaseComponent &#123;
+  clickAction (): void &#123;
+    console.log('Button clicked');
   &#125;
 &#125;
             </code>
           </pre>
         </mtl-tab-item>
       </mtl-tabs>
+    </div>
+
+    <div inputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white dark:bg-indigo-600">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Valor por defecto</th>
+            <th>Posibles valores</th>
+          </tr>
+        </thead>
+        <tbody class="dark:text-white">
+          <tr>
+            <td>type</td>
+            <td>Color del botón</td>
+            <td>enum</td>
+            <td>'default'</td>
+            <td>
+              <ul>
+                <li>'default'</li>
+                <li>'save'</li>
+                <li>'danger'</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>float</td>
+            <td>Determina si el botón es flotante</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>floatPosition</td>
+            <td>Determina la esquina en la que se muestra el botón</td>
+            <td>MtlButtonFloatPosition</td>
+            <td>BOTTOM_RIGHT</td>
+            <td>
+              <ul>
+                <li>BOTTOM_RIGHT</li>
+                <li>BOTTOM_LEFT</li>
+                <li>TOP_RIGHT</li>
+                <li>TOP_LEFT</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>disabled</td>
+            <td>Estado del botón</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>size</td>
+            <td>Tamaño del botón</td>
+            <td>enum</td>
+            <td>'medium'</td>
+            <td>
+              <ul>
+                <li>'small'</li>
+                <li>'medium'</li>
+                <li>'big'</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div outputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white dark:bg-indigo-600">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Valor devuelto</th>
+          </tr>
+        </thead>
+        <tbody class="dark:text-white">
+          <tr>
+            <td>action</td>
+            <td>Acción al clicar el botón</td>
+            <td>MouseEvent</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </mtl-base-showcase>
 </div>

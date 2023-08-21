@@ -19,6 +19,7 @@ export * from './lib/components/mtl-toast/types/toast';
 
 // Mtl Button
 export * from './lib/components/mtl-button/mtl-button.component';
+export * from './lib/components/mtl-button/types/mtl-button'
 
 // Mtl NavBar
 export * from './lib/components/mtl-navbar/mtl-navbar.component';
