@@ -24,22 +24,28 @@ export * from './lib/components/mtl-button/types/mtl-button'
 // Mtl NavBar
 export * from './lib/components/mtl-navbar/mtl-navbar.component';
 export * from './lib/components/mtl-navbar/ui/mtl-navbar-item/mtl-navbar-item.component';
-export * from './lib/components/mtl-navbar/ui/mtl-navbar-dropdown/mtl-navbar-dropdown.component'
+export * from './lib/components/mtl-navbar/ui/mtl-navbar-dropdown/mtl-navbar-dropdown.component';
 
 // Mtl Toggle
-export * from './lib/components/mtl-toggle/mtl-toggle.component'
+export * from './lib/components/mtl-toggle/mtl-toggle.component';
 
 // Mtl Modal
-export * from './lib/components/mtl-modal/mtl-modal.component'
-export * from './lib/components/mtl-modal/mtl-modal.service'
-export * from './lib/components/mtl-modal/types/modal'
+export * from './lib/components/mtl-modal/mtl-modal.component';
+export * from './lib/components/mtl-modal/mtl-modal.service';
+export * from './lib/components/mtl-modal/types/modal';
 
 // Mtl Sidebar
-export * from './lib/components/mtl-sidebar/mtl-sidebar.component'
-export * from './lib/components/mtl-sidebar/types/mtl-sidebar-item'
+export * from './lib/components/mtl-sidebar/mtl-sidebar.component';
+export * from './lib/components/mtl-sidebar/types/mtl-sidebar-item';
+
+// Mtl Badge
+export * from './lib/components/mtl-badge/mtl-badge.component';
+export * from './lib/components/mtl-badge/types/mtl-badge';
+
 
 // Services
 export * from './lib/shared/services/dark-mode.service';
 
 // Directives
-export * from './lib/shared/directives/clickOutside.directive'
+export * from './lib/shared/directives/clickOutside.directive';
+

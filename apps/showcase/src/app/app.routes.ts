@@ -28,5 +28,9 @@ export const appRoutes: Route[] = [
   {
     path: 'modal',
     loadComponent: async () => (await import('./components/modal-showcase/modal-showcase.component')).ModalShowcaseComponent
+  },
+  {
+    path: 'badge',
+    loadComponent: async () => (await import('./components/badge-showcase/badge-showcase.component')).BadgeShowcaseComponent
   }
 ];
