@@ -1,0 +1,297 @@
+<div class="progressBar-showcase">
+  <mtl-base-showcase title="<mtl-progressBar></mtl-progressBar>" [showOutputs]="false">
+    <div examples>
+      <div class="flex flex-col gap-3">
+        <div class="example1">
+          <p class="text-indigo-500 dark:text-white font-bold my-2">Ejemplo 1: Estándar</p>
+          <mtl-progressBar [value]="valueEx1">
+          </mtl-progressBar>
+          <div class="flex space-x-4 my-2">
+            <mtl-button type="default"
+            (action)="increaseEx1()"
+            >
+            Aumentar
+            </mtl-button>
+            <mtl-button type="danger"
+            (action)="decreaseEx1()">
+            Disminuir
+            </mtl-button>
+          </div>
+        </div>
+        <div class="example2">
+          <p class="text-indigo-500 dark:text-white font-bold my-2">Ejemplo 2: Label</p>
+          <mtl-progressBar [value]="valueEx2" [showPercentage]="true">
+          </mtl-progressBar>
+          <div class="flex space-x-4 my-2">
+            <mtl-button type="default" size="medium"
+            (action)="increaseEx2()"
+            >
+              Aumentar
+            </mtl-button>
+            <mtl-button type="danger" size="medium"
+            (action)="decreaseEx2()">
+              Disminuir
+            </mtl-button>
+          </div>
+        </div>
+        <div class="example3">
+          <p class="text-indigo-500 dark:text-white font-bold my-2">Ejemplo 3: Striped</p>
+          <mtl-progressBar [value]="valueEx3" [striped]="true" [showPercentage]="true">
+          </mtl-progressBar>
+          <div class="flex space-x-4 my-2">
+            <mtl-button type="default" size="medium"
+            (action)="increaseEx3()">
+              Aumentar
+            </mtl-button>
+            <mtl-button type="danger" size="medium"
+            (action)="decreaseEx3()">
+              Disminuir
+            </mtl-button>
+          </div>
+        </div>
+        <div class="example4">
+          <p class="text-indigo-500 dark:text-white font-bold my-2">Ejemplo 4: Height</p>
+          <mtl-progressBar [value]="valueEx4" [height]="37" [showPercentage]="true">
+          </mtl-progressBar>
+          <div class="flex space-x-4 my-2">
+            <mtl-button type="default" size="medium"
+            (action)="increaseEx4()">
+              Aumentar
+            </mtl-button>
+            <mtl-button type="danger" size="medium"
+            (action)="decreaseEx4()">
+              Disminuir
+            </mtl-button>
+          </div>
+        </div>
+        <div class="example5">
+          <p class="text-indigo-500 dark:text-white font-bold my-2">Ejemplo 5: Animation</p>
+          <mtl-progressBar [value]="valueEx5" [striped]="true" [animated]="true" [showPercentage]="true">
+          </mtl-progressBar>
+          <div class="flex space-x-4 my-2">
+            <mtl-button type="default" size="medium"
+            (action)="increaseEx5()">
+              Aumentar
+            </mtl-button>
+            <mtl-button type="danger" size="medium"
+            (action)="decreaseEx5()">
+              Disminuir
+            </mtl-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div code>
+      <mtl-tabs>
+        <mtl-tab-item title="HTML">
+          <pre>
+            <code>
+&lt;div class="example1"&gt;
+  &lt;p class="text-indigo-500 dark:text-white font-bold my-2"&gt;Ejemplo 1: Estándar&lt;/p&gt;
+  &lt;mtl-progressBar [value]="valueEx1"&gt;
+  &lt;/mtl-progressBar&gt;
+  &lt;div class="flex space-x-4 my-2"&gt;
+    &lt;mtl-button type="default"
+    (action)="increaseEx1()"
+    &gt;
+    Aumentar
+    &lt;/mtl-button&gt;
+    &lt;mtl-button type="danger"
+    (action)="decreaseEx1()"
+    &gt;
+    Disminuir
+    &lt;/mtl-button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="example2"&gt;
+  &lt;p class="text-indigo-500 dark:text-white font-bold my-2"&gt;Ejemplo 2: Label&lt;/p&gt;
+  &lt;mtl-progressBar [value]="valueEx2" [showPercentage]="true"&gt;
+  &lt;/mtl-progressBar&gt;
+  &lt;div class="flex space-x-4 my-2"&gt;
+    &lt;mtl-button type="default" size="medium"
+    (action)="increaseEx2()"
+    &gt;
+    Aumentar
+    &lt;/mtl-button&gt;
+    &lt;mtl-button type="danger" size="medium"
+    (action)="decreaseEx2()"
+    &gt;
+    Disminuir
+    &lt;/mtl-button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="example3"&gt;
+  &lt;p class="text-indigo-500 dark:text-white font-bold my-2"&gt;Ejemplo 3: Striped&lt;/p&gt;
+  &lt;mtl-progressBar [value]="valueEx3" [striped]="true" [showPercentage]="true"&gt;
+  &lt;/mtl-progressBar&gt;
+  &lt;div class="flex space-x-4 my-2"&gt;
+    &lt;mtl-button type="default" size="medium"
+    (action)="increaseEx3()"
+    &gt;
+    Aumentar
+    &lt;/mtl-button&gt;
+    &lt;mtl-button type="danger" size="medium"
+    (action)="decreaseEx3()"
+    &gt;
+    Disminuir
+    &lt;/mtl-button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="example4"&gt;
+  &lt;p class="text-indigo-500 dark:text-white font-bold my-2"&gt;Ejemplo 4: Height&lt;/p&gt;
+  &lt;mtl-progressBar [value]="valueEx4" [height]="37" [showPercentage]="true"&gt;
+  &lt;/mtl-progressBar&gt;
+  &lt;div class="flex space-x-4 my-2"&gt;
+    &lt;mtl-button type="default" size="medium"
+    (action)="increaseEx4()"
+    &gt;
+    Aumentar
+    &lt;/mtl-button&gt;
+    &lt;mtl-button type="danger" size="medium"
+    (action)="decreaseEx4()"
+    &gt;
+    Disminuir
+    &lt;/mtl-button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="example5"&gt;
+  &lt;p class="text-indigo-500 dark:text-white font-bold my-2"&gt;Ejemplo 5: Animation&lt;/p&gt;
+  &lt;mtl-progressBar [value]="valueEx5" [striped]="true" [animated]="true" [showPercentage]="true"&gt;
+  &lt;/mtl-progressBar&gt;
+  &lt;div class="flex space-x-4 my-2"&gt;
+    &lt;mtl-button type="default" size="medium"
+    (action)="increaseEx5()"
+    &gt;
+    Aumentar
+    &lt;/mtl-button&gt;
+    &lt;mtl-button type="danger" size="medium"
+    (action)="decreaseEx5()"
+    &gt;
+    Disminuir
+    &lt;/mtl-button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </code>
+          </pre>
+        </mtl-tab-item>
+        <mtl-tab-item title="TS">
+          <pre>
+            <code>
+import &#123; Component &#125; from '@angular/core';
+import &#123; CommonModule &#125; from '@angular/common';
+import &#123; MtlProgressBarComponent &#125; from '@moontech-components';
+
+@Component(&#123;
+  selector: 'mtl-progressBar-showcase',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MtlProgressBarComponent
+  ],
+  templateUrl: './progressBar-showcase.component.html',
+
+&#125;)
+
+export class MtlProgressBarComponent &#123;
+
+  valueEx1 = 0;
+  valueEx2 = 0;
+  valueEx3 = 0;
+  valueEx4 = 0;
+  valueEx5 = 0;
+
+  increaseEx1() &#123;
+    this.valueEx1 >= 90 ? this.valueEx1 = 100 : this.valueEx1 += 10;
+  &#125;
+
+  decreaseEx1() &#123;
+    this.valueEx1 <= 10 ? this.valueEx1 = 0 : this.valueEx1 -= 10;
+  &#125;
+
+  increaseEx2() &#123;
+    this.valueEx2 >= 90 ? this.valueEx2 = 100 : this.valueEx2 += 10;
+  &#125;
+
+  decreaseEx2() &#123;
+    this.valueEx2 <= 10 ? this.valueEx2 = 0 : this.valueEx2 -= 10;
+  &#125;
+
+  increaseEx3() &#123;
+    this.valueEx3 >= 90 ? this.valueEx3 = 100 : this.valueEx3 += 10;
+  &#125;
+
+  decreaseEx3() &#123;
+    this.valueEx3 <= 10 ? this.valueEx3 = 0 : this.valueEx3 -= 10;
+  &#125;
+
+  increaseEx4() &#123;
+    this.valueEx4 >= 90 ? this.valueEx4 = 100 : this.valueEx4 += 10;
+  &#125;
+
+  decreaseEx4() &#123;
+    this.valueEx4 <= 10 ? this.valueEx4 = 0 : this.valueEx4 -= 10;
+  &#125;
+
+  increaseEx5() &#123;
+    this.valueEx5 >= 90 ? this.valueEx5 = 100 : this.valueEx5 += 10;
+  &#125;
+
+  decreaseEx5() &#123;
+    this.valueEx5 <= 10 ? this.valueEx5 = 0 : this.valueEx5 -= 10;
+  &#125;
+&#125;
+
+            </code>
+          </pre>
+        </mtl-tab-item>
+      </mtl-tabs>
+    </div>
+    <div inputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white dark:bg-indigo-600">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Valor por defecto</th>
+          </tr>
+        </thead>
+        <tbody class="dark:text-white">
+          <tr>
+            <td>value</td>
+            <td>Indica el porcentaje de la barra de progreso. Entre 0 y 100.</td>
+            <td>number</td>
+            <td>undefined</td>
+          </tr>
+          <tr>
+            <td>showPercentage</td>
+            <td>Indica el progreso en la barra.</td>
+            <td>boolean</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>height</td>
+            <td>Altura de la barra de progreso.	</td>
+            <td>number</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>striped</td>
+            <td>Estilo con lineas en la barra de progreso.</td>
+            <td>boolean</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>animated</td>
+            <td>Indica si anima la barra de progreso. Es necesario que striped este activo</td>
+            <td>boolean</td>
+            <td>false</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div outputs>
+
+    </div>
+  </mtl-base-showcase>
+</div>
