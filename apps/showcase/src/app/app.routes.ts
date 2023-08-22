@@ -28,5 +28,9 @@ export const appRoutes: Route[] = [
   {
     path: 'modal',
     loadComponent: async () => (await import('./components/modal-showcase/modal-showcase.component')).ModalShowcaseComponent
+  },
+  {
+    path: 'progressBar',
+    loadComponent: async () => (await import('./components/progressBar-showcase/progressBar-showcase.component')).ProgressBarShowcaseComponent
   }
 ];
