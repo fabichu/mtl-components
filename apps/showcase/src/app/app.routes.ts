@@ -40,5 +40,9 @@ export const appRoutes: Route[] = [
   {
     path: 'textarea',
     loadComponent: async () => (await import('./components/textarea-showcase/textarea-showcase.component')).TextareaShowcaseComponent
+  },
+  {
+    path: 'progressBar',
+    loadComponent: async () => (await import('./components/progressBar-showcase/progressBar-showcase.component')).ProgressBarShowcaseComponent
   }
 ];

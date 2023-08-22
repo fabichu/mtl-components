@@ -55,3 +55,5 @@ export * from './lib/shared/services/dark-mode.service';
 // Directives
 export * from './lib/shared/directives/clickOutside.directive';
 
+//Progress Bar
+export * from './lib/components/mtl-progressBar/mtl-progressBar.component'
