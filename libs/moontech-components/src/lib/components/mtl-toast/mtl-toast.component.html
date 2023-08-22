@@ -1,5 +1,5 @@
 <div
-  class="mtl-toast fixed flex gap-3 
+  class="mtl-toast fixed flex gap-3 z-50 
   {{ position==='tr' || position==='tl' ? 'top-7' : 'bottom-7' }} {{ position==='br' || position==='tr' ? 'right-5' : 'left-7' }}"
   [ngClass]="{
     'flex-col-reverse': position === 'br' || position === 'bl',
@@ -19,7 +19,7 @@
         <i *ngIf="toast.type === 'info'" class="fa-solid fa-info"></i>
         <i *ngIf="toast.type === 'error'" class="fa-solid fa-xmark"></i>
       </div>
-      <div class="ml-3 text-lg font-normal font-bold">{{ toast.title }}</div>
+      <div class="ml-3 text-lg font-normal font-bold text-black">{{ toast.title }}</div>
       <button type="button" (click)="toastService.closeToast(toast)"
         class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:hover:bg-gray-700"
         data-dismiss-target="#toast-default" aria-label="Close">

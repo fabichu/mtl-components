@@ -50,16 +50,24 @@
 &lt;div class=&quot;example1&quot;&gt;
   &lt;p class=&quot;mb-4&quot;&gt;Ejemplo 1: Tipos&lt;/p&gt;
   &lt;div class=&quot;flex gap-4&quot;&gt;
-    &lt;button class=&quot;bg-blue-100 text-blue-500 rounded-md py-2 px-3 shadow-md&quot; (click)=&quot;addToast('info')&quot;&gt;
+    &lt;button 
+      class=&quot;bg-blue-100 text-blue-500 rounded-md py-2 px-3 shadow-md&quot; 
+      (click)=&quot;addToast('info')&quot;&gt;
       Mensaje de info
     &lt;/button&gt;
-    &lt;button class=&quot;bg-red-100 text-red-500 rounded-md py-2 px-3 shadow-md&quot; (click)=&quot;addToast('error')&quot;&gt;
+    &lt;button 
+      class=&quot;bg-red-100 text-red-500 rounded-md py-2 px-3 shadow-md&quot; 
+      (click)=&quot;addToast('error')&quot;&gt;
       Mensaje de error
     &lt;/button&gt;
-    &lt;button class=&quot;bg-amber-100 text-amber-500 rounded-md py-2 px-3 shadow-md&quot; (click)=&quot;addToast('warning')&quot;&gt;
+    &lt;button 
+      class=&quot;bg-amber-100 text-amber-500 rounded-md py-2 px-3 shadow-md&quot; 
+      (click)=&quot;addToast('warning')&quot;&gt;
       Mensaje de alerta
     &lt;/button&gt;
-    &lt;button class=&quot;bg-green-100 text-green-500 rounded-md py-2 px-3 shadow-md&quot; (click)=&quot;addToast('success')&quot;&gt;
+    &lt;button 
+      class=&quot;bg-green-100 text-green-500 rounded-md py-2 px-3 shadow-md&quot; 
+      (click)=&quot;addToast('success')&quot;&gt;
       Mensaje de éxito
     &lt;/button&gt;
   &lt;/div&gt;
@@ -67,7 +75,8 @@
 &lt;div class=&quot;example2&quot;&gt;
   &lt;p class=&quot;mb-4&quot;&gt;Ejemplo 2: Posición&lt;/p&gt;
   &lt;div class=&quot;flex gap-4&quot;&gt;
-    &lt;button class=&quot;bg-blue-100 text-blue-500 rounded-md py-2 px-3 shadow-md&quot;
+    &lt;button 
+      class=&quot;bg-blue-100 text-blue-500 rounded-md py-2 px-3 shadow-md&quot;
       (click)=&quot;addToast('info', MtlToastPosition.TOP_RIGHT)&quot;&gt;
       Superior derecha
     &lt;/button&gt;
@@ -92,7 +101,12 @@
         <mtl-tab-item title="TS">
           <pre>
             <code>
-import &#123; MtlToast, MtlToastComponent, MtlToastPosition, MtlToastService &#125; from '@moontech-components';
+import &#123; 
+  MtlToast, 
+  MtlToastComponent, 
+  MtlToastPosition, 
+  MtlToastService 
+&#125; from '@moontech-components';
 import &#123; Component, inject &#125; from '@angular/core';
 import &#123; CommonModule &#125; from '@angular/common';
 
