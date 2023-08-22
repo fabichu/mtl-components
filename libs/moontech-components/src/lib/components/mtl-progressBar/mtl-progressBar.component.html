@@ -1,0 +1,11 @@
+<div class="mtl-progressBar">
+  <div class="w-full bg-gray-200 rounded-md dark:bg-gray-400" [style.height.px]="height">    
+    <div
+      [ngClass]="{'bg-striped': striped, 'striped-animation': animated}"
+      class="h-full transition-all duration-300 ease-linear rounded-md bg-indigo-600 relative flex items-center justify-center text-white overflow-hidden"
+      [style.width.%]="value"
+    >
+      <span *ngIf="showPercentage">{{ value }}%</span>
+    </div>
+  </div>
+</div>
