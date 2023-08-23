@@ -60,7 +60,8 @@ export class AppComponent {
         title: 'Otros',
         children: [
           { text: 'Toast', path: '/toast' },
-          { text: 'Progress Bar', path: '/progressBar' }
+          { text: 'Progress Bar', path: '/progressBar' },
+          { text: 'Spinner', path: '/spinner' }
         ]
       }
     ]

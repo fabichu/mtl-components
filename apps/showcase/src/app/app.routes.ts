@@ -44,5 +44,9 @@ export const appRoutes: Route[] = [
   {
     path: 'progressBar',
     loadComponent: async () => (await import('./components/progressBar-showcase/progressBar-showcase.component')).ProgressBarShowcaseComponent
+  },
+  {
+    path: 'spinner',
+    loadComponent: async () => (await import('./components/spinner-showcase/spinner-showcase.component')).SpinnerShowcaseComponent
   }
 ];
