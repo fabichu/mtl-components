@@ -44,5 +44,9 @@ export const appRoutes: Route[] = [
   {
     path: 'progressBar',
     loadComponent: async () => (await import('./components/progressBar-showcase/progressBar-showcase.component')).ProgressBarShowcaseComponent
+  },
+  {
+    path: 'checkbox-group',
+    loadComponent: async () => (await import('./components/checkbox-group-showcase/checkbox-group-showcase.component')).CheckboxGroupShowcaseComponent
   }
 ];

@@ -1,0 +1,164 @@
+<div class="checkbox-showcase">
+  <mtl-base-showcase title="<mtl-checkbox-group></mtl-checkbox-group>" [showInputs]="false" [showOutputs]="false">
+    <div examples>
+      <form [formGroup]="mtlForm" class="flex flex-col gap-4">
+        <div class="example1">
+          <p class="text-indigo-500 font-bold">Ejemplo 1: Estandar</p>
+          <mtl-checkbox-group formControlName="values1">
+            <mtl-checkbox-group-item [value]="valuesExample1[0]" label="angular"></mtl-checkbox-group-item>
+            <mtl-checkbox-group-item [value]="valuesExample1[1]" label="react"></mtl-checkbox-group-item>
+            <mtl-checkbox-group-item [value]="valuesExample1[2]" label="nestjs"></mtl-checkbox-group-item>
+            <mtl-checkbox-group-item [value]="valuesExample1[3]" label="mongodb"></mtl-checkbox-group-item>
+          </mtl-checkbox-group>
+          <p>{{ mtlForm.value.values1 | json }}</p>
+        </div>
+
+        <div class="example2">
+          <p class="text-indigo-500 font-bold">Ejemplo 2: Precargado</p>
+          <mtl-checkbox-group formControlName="values2">
+            <mtl-checkbox-group-item [value]="valuesExample2[0]" label="angular"></mtl-checkbox-group-item>
+            <mtl-checkbox-group-item [value]="valuesExample2[1]" label="react"></mtl-checkbox-group-item>
+            <mtl-checkbox-group-item [value]="valuesExample2[2]" label="nestjs"></mtl-checkbox-group-item>
+            <mtl-checkbox-group-item [value]="valuesExample2[3]" label="mongodb"></mtl-checkbox-group-item>
+          </mtl-checkbox-group>
+          <p>{{ mtlForm.value.values2 | json }}</p>
+        </div>
+
+        <div class="example3">
+          <p class="text-indigo-500 font-bold">Ejemplo 3: Con objetos</p>
+          <mtl-checkbox-group formControlName="values3">
+            <mtl-checkbox-group-item [value]="valuesExample3[0]" label="Francisco"></mtl-checkbox-group-item>
+            <mtl-checkbox-group-item [value]="valuesExample3[1]" label="Ana"></mtl-checkbox-group-item>
+            <mtl-checkbox-group-item [value]="valuesExample3[2]" label="Julia"></mtl-checkbox-group-item>
+          </mtl-checkbox-group>
+          <p>{{ mtlForm.value.values3 | json }}</p>
+        </div>
+
+        <div class="example4">
+          <p class="text-indigo-500 font-bold">Ejemplo 4: Con objetos precargado</p>
+          <mtl-checkbox-group formControlName="values4">
+            <mtl-checkbox-group-item [value]="valuesExample4[0]" label="Isabel"></mtl-checkbox-group-item>
+            <mtl-checkbox-group-item [value]="valuesExample4[1]" label="Jorge"></mtl-checkbox-group-item>
+            <mtl-checkbox-group-item [value]="valuesExample4[2]" label="Manuel"></mtl-checkbox-group-item>
+          </mtl-checkbox-group>
+          <p>{{ mtlForm.value.values4 | json }}</p>
+        </div>
+      </form>
+    </div>
+    <div code>
+      <mtl-tabs>
+        <mtl-tab-item title="HTML">
+          <pre>
+            <code>
+&lt;form [formGroup]=&quot;mtlForm&quot; class=&quot;flex flex-col gap-4&quot;&gt;
+  &lt;div class=&quot;example1&quot;&gt;
+    &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 1: Estandar&lt;/p&gt;
+    &lt;mtl-checkbox-group formControlName=&quot;values1&quot;&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample1[0]&quot; label=&quot;angular&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample1[1]&quot; label=&quot;react&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample1[2]&quot; label=&quot;nestjs&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample1[3]&quot; label=&quot;mongodb&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+    &lt;/mtl-checkbox-group&gt;
+    &lt;p&gt;&#123; &#123; mtlForm.value.values1 | json &#125; &#125;&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;example2&quot;&gt;
+    &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 2: Precargado&lt;/p&gt;
+    &lt;mtl-checkbox-group formControlName=&quot;values2&quot;&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample2[0]&quot; label=&quot;angular&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample2[1]&quot; label=&quot;react&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample2[2]&quot; label=&quot;nestjs&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample2[3]&quot; label=&quot;mongodb&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+    &lt;/mtl-checkbox-group&gt;
+    &lt;p&gt;&#123; &#123; mtlForm.value.values2 | json &#125; &#125;&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;example3&quot;&gt;
+    &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 3: Con objetos&lt;/p&gt;
+    &lt;mtl-checkbox-group formControlName=&quot;values3&quot;&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample3[0]&quot; label=&quot;Francisco&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample3[1]&quot; label=&quot;Ana&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample3[2]&quot; label=&quot;Julia&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+    &lt;/mtl-checkbox-group&gt;
+    &lt;p&gt;&#123; &#123; mtlForm.value.values3 | json &#125; &#125;&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;example4&quot;&gt;
+    &lt;p class=&quot;text-indigo-500 font-bold&quot;&gt;Ejemplo 4: Con objetos precargado&lt;/p&gt;
+    &lt;mtl-checkbox-group formControlName=&quot;values4&quot;&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample4[0]&quot; label=&quot;Isabel&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample4[1]&quot; label=&quot;Jorge&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+      &lt;mtl-checkbox-group-item [value]=&quot;valuesExample4[2]&quot; label=&quot;Manuel&quot;&gt;
+      &lt;/mtl-checkbox-group-item&gt;
+    &lt;/mtl-checkbox-group&gt;
+    &lt;p&gt;&#123; &#123; mtlForm.value.values4 | json &#125; &#125;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+            </code>
+          </pre>
+        </mtl-tab-item>
+        <mtl-tab-item title="TS">
+          <pre>
+            <code>
+import &#123; Component, inject &#125; from '@angular/core';
+import &#123; CommonModule &#125; from '@angular/common';
+import &#123; MtlCheckboxComponent, MtlCheckboxGroupComponent &#125; from '@moontech-components';
+import &#123; FormBuilder, ReactiveFormsModule &#125; from '@angular/forms';
+
+@Component(&#123;
+  selector: 'mtl-checkbox-group-showcase',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MtlCheckboxGroupComponent,
+    MtlCheckboxComponent,
+    ReactiveFormsModule,
+  ],
+  templateUrl: './checkbox-group-showcase.component.html',
+&#125;)
+export class CheckboxGroupShowcaseComponent &#123;
+  private readonly fb = inject(FormBuilder)
+
+  valuesExample1 = ['angular', 'react', 'nestjs', 'mongodb']
+  valuesExample2 = ['angular', 'react', 'nestjs', 'mongodb']
+  valuesExample3 = [
+    &#123; name: 'Francisco', age: '57' &#125;, 
+    &#123; name: 'Ana', age: '32' &#125;, 
+    &#123; name: 'Julia', age: '24' &#125;
+  ]
+  valuesExample4 = [
+    &#123; name: 'Isabel', age: '25' &#125;, 
+    &#123; name: 'Jorge', age: '44' &#125;, 
+    &#123; name: 'Manuel', age: '38' &#125;]
+
+  mtlForm = this.fb.group(&#123;
+    values1: [[]],
+    values2: [['angular', 'nestjs']],
+    values3: [[]],
+    values4: [[
+      &#123; name: 'Isabel', age: '25' &#125;, 
+      &#123; name: 'Jorge', age: '44' &#125;
+    ]],
+    values5: null
+  &#125;)
+&#125;             
+            </code>
+          </pre>
+        </mtl-tab-item>
+      </mtl-tabs>
+    </div>
+  </mtl-base-showcase>
+</div>

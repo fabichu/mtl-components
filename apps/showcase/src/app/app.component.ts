@@ -50,7 +50,8 @@ export class AppComponent {
           { text: 'Button', path: '/button' },
           { text: 'Dropdown', path: '/dropdown' },
           { text: 'Toggle', path: '/toggle' },
-          { text: 'Textarea', path: '/textarea' }
+          { text: 'Textarea', path: '/textarea' },
+          { text: 'Checkbox Group', path: '/checkbox-group' }
         ]
       },
       {

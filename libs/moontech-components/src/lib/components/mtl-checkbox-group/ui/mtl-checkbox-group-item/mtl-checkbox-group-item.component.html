@@ -1,0 +1,9 @@
+<div class="mtl-checkbox">
+  <div class="flex items-center" (click)="checkboxGroup.toggleValue(value)">
+    <input [checked]="checkboxGroup.isSelected(value)" type="checkbox"
+      class="w-6 h-6 text-pink-600 rounded p-1 focus:ring-0 focus:ring-offset-0">
+    <label *ngIf="label" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+      {{ label }}
+    </label>
+  </div>
+</div>

@@ -49,6 +49,11 @@ export * from './lib/components/mtl-card/mtl-card.component'
 //Mtl textarea
 export * from './lib/components/mtl-textarea/mtl-textarea.component'
 
+// Mtl Checkbox Group
+export * from './lib/components/mtl-checkbox-group/ui/mtl-checkbox-group-item/mtl-checkbox-group-item.component';
+export * from './lib/components/mtl-checkbox-group/ui/mtl-checkbox-group-item/types/mtl-checkbox';
+export * from './lib/components/mtl-checkbox-group/mtl-checkbox-group.component';
+
 // Services
 export * from './lib/shared/services/dark-mode.service';
 
