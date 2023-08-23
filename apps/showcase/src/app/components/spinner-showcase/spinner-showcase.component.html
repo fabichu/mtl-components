@@ -1,0 +1,142 @@
+<div class="spinner-showcase">
+  <mtl-base-showcase title="<mtl-spinner></mtl-spinner>" [showOutputs]="false">
+    <div examples>
+      <p class="dark:text-white">Modo: <span class="text-gray-600 dark:text-gray-300">{{ embedded ? 'Embebido' : 'No embebido' }}</span></p>
+      <p class="dark:text-white">Backdrop: <span class="text-gray-600 dark:text-gray-300">{{ showBackdrop }}</span></p>
+      <div class="flex space-x-4 my-2">
+        <mtl-button #miBoton type="save" (action)="activar()">
+          Activar
+        </mtl-button>
+        <mtl-button type="default" (action)="cambioModo()">
+          Cambiar modo
+        </mtl-button>
+        <mtl-button type="danger" (action)="backdrop()">
+          Mostrar backdrop
+        </mtl-button>
+      </div>
+        <div class="embedded bg-white-600 dark:bg-gray-600 border border-solid border-1 
+          border-black h-[400px] w-[450px] relative">
+          <mtl-spinner [embedded]="embedded" [showBackdrop]="showBackdrop"></mtl-spinner>    
+            <p> 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+    </div>
+    <div code>
+      <mtl-tabs>
+        <mtl-tab-item title="HTML">
+          <pre>
+            <code>
+&lt;p class="dark:text-white"&gt;Modo: 
+  &lt;span class="text-gray-600 dark:text-gray-300"&gt;
+    &#123; &#123; embedded ? 'Embebido' : 'No embebido' &#125; &#125;
+  &lt;/span&gt;
+&lt;/p&gt;
+&lt;p class="dark:text-white"&gt;Backdrop: 
+  &lt;span class="text-gray-600 dark:text-gray-300"&gt;
+    &#123; &#123; showBackdrop &#125; &#125;
+  &lt;/span&gt;
+&lt;/p&gt;
+&lt;div class="flex space-x-4 my-2"&gt;
+  &lt;mtl-button #miBoton type="save" (action)="activar()"&gt;
+    Activar
+  &lt;/mtl-button&gt;
+  &lt;mtl-button type="default" (action)="cambioModo()"&gt;
+    Cambiar modo
+  &lt;/mtl-button&gt;
+  &lt;mtl-button type="danger" (action)="backdrop()"&gt;
+    Mostrar backdrop
+  &lt;/mtl-button&gt;
+&lt;/div&gt;
+&lt;div 
+  class="embedded bg-white-600 dark:bg-gray-600 border border-solid border-1 
+  border-black h-[400px] w-[450px] relative"&gt;
+  &lt;mtl-spinner [embedded]="embedded" [showBackdrop]="showBackdrop"&gt;&lt;/mtl-spinner&gt;    
+  &lt;p&gt; 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+    nisi ut aliquip ex ea commodo consequat.
+  &lt;/p&gt;
+&lt;/div&gt;
+            </code>
+          </pre>
+        </mtl-tab-item>
+        <mtl-tab-item title="TS">
+          <pre>
+            <code>
+import &#123; Component, inject &#125; from '@angular/core';
+import &#123; CommonModule &#125; from '@angular/common';
+
+import &#123; MtlSpinnerComponent, MtlButtonComponent, MtlSpinnerService &#125; from '@moontech-components';
+
+@Component(&#123;
+  selector: 'mtl-spinner-showcase',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MtlSpinnerComponent,
+    MtlButtonComponent,
+  ],
+  templateUrl: './spinner-showcase.component.html'
+&#125;)
+
+export class SpinnerShowcaseComponent &#123;
+  private readonly spinnerService = inject(MtlSpinnerService)
+
+  public embedded = false;
+  public showBackdrop = true;
+
+  activar() &#123;
+    this.spinnerService.show();
+
+    setTimeout(() => &#123;
+      this.spinnerService.hide();
+    &#125;, 3000);
+  &#125;
+
+  cambioModo() &#123;
+    this.embedded = !this.embedded
+  &#125;
+
+  backdrop() &#123;
+    this.showBackdrop = !this.showBackdrop;
+  &#125;
+&#125;
+            </code>
+          </pre>
+        </mtl-tab-item>
+      </mtl-tabs>
+    </div>
+    <div inputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white dark:bg-indigo-600">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Valor por defecto</th>
+          </tr>
+        </thead>
+        <tbody class="dark:text-white">
+          <tr>
+            <td>embedded</td>
+            <td>Indica si el spinner es relative o absolute</td>
+            <td>boolean</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>showBackdrop</td>
+            <td>Indica si se muestra el backdrop en la pantalla al usar el spinner</td>
+            <td>boolean</td>
+            <td>true</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div outputs>
+    </div>
+  </mtl-base-showcase>
+</div>

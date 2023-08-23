@@ -48,5 +48,9 @@ export const appRoutes: Route[] = [
   {
     path: 'checkbox-group',
     loadComponent: async () => (await import('./components/checkbox-group-showcase/checkbox-group-showcase.component')).CheckboxGroupShowcaseComponent
+  },
+  {
+    path: 'spinner',
+    loadComponent: async () => (await import('./components/spinner-showcase/spinner-showcase.component')).SpinnerShowcaseComponent
   }
 ];

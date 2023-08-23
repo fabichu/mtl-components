@@ -62,3 +62,7 @@ export * from './lib/shared/directives/clickOutside.directive';
 
 //Progress Bar
 export * from './lib/components/mtl-progressBar/mtl-progressBar.component'
+
+//Spinner
+export * from './lib/components/mtl-spinner/mtl-spinner.component'
+export * from './lib/components/mtl-spinner/mtl-spinner.service'
