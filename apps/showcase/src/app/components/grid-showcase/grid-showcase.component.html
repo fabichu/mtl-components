@@ -1,0 +1,235 @@
+<div class="grid-showcase">
+  <mtl-base-showcase title="<mtl-grid></mtl-grid>">
+    <div examples class="flex flex-col gap-4">
+      <mtl-button type="default" size="small" (action)="toggleBorders()">
+        {{ showBorders ? 'Desactivar bordes' : 'Activar bordes' }}
+      </mtl-button>
+      <div class="example1">
+        <p class="text-indigo-500 dark:text-white font-bold">Ejemplo 1: Matriz 2x5</p>
+        <mtl-grid [cols]="5" [showBorders]="showBorders" [data]="data1" (clickItem)="clickItem($event)"></mtl-grid>
+      </div>
+      <div class="example2">
+        <p class="text-indigo-500 dark:text-white  font-bold">Ejemplo 2: Matriz 5x2</p>
+        <mtl-grid [cols]="2" [showBorders]="showBorders" [data]="data2" (clickItem)="clickItem($event)"></mtl-grid>
+      </div>
+    
+      <div class="example3">
+        <p class="text-indigo-500 dark:text-white font-bold">Ejemplo 5: Matriz 2x5, con spacing y borde redondeado</p>
+        <mtl-grid [cols]="5" [showBorders]="showBorders" [data]="data3" [borderRound]="true"
+        [spacing]="12" (clickItem)="clickItem($event)"></mtl-grid>
+      </div>
+    </div>
+    <div code>
+      <mtl-tabs>
+        <mtl-tab-item title="HTML">
+          <pre>
+            <code>
+&lt;div examples class="flex flex-col gap-4"&gt;
+  &lt;mtl-button type="default" size="small" (action)="toggleBorders()"&gt;
+    &#123;&#123; showBorders ? 'Desactivar bordes' : 'Activar bordes' &#125;&#125;
+  &lt;/mtl-button&gt;
+
+  &lt;div class="example1"&gt;
+    &lt;p class="text-indigo-500 dark:text-white font-bold"&gt;
+      Ejemplo 1: Matriz 2x5
+    &lt;/p&gt;
+    &lt;mtl-grid 
+      [cols]="5" 
+      [showBorders]="showBorders" 
+      [data]="data1" 
+      (clickItem)="clickItem($event)"&gt;
+    &lt;/mtl-grid&gt;
+  &lt;/div&gt;
+
+  &lt;div class="example2"&gt;
+    &lt;p class="text-indigo-500 dark:text-white  font-bold"&gt;
+      Ejemplo 2: Matriz 5x2
+    &lt;/p&gt;
+    &lt;mtl-grid 
+      [cols]="2" 
+      [showBorders]="showBorders" 
+      [data]="data2" 
+      (clickItem)="clickItem($event)"&gt;
+    &lt;/mtl-grid&gt;
+  &lt;/div&gt;
+
+  &lt;div class="example3"&gt;
+    &lt;p class="text-indigo-500 dark:text-white font-bold"&gt;
+      Ejemplo 5: Matriz 2x5, con spacing y borde redondeado
+    &lt;/p&gt;
+    &lt;mtl-grid 
+    [cols]="5" 
+    [showBorders]="showBorders" 
+    [data]="data3" 
+    [borderRound]="true"
+    [spacing]="12" 
+    (clickItem)="clickItem($event)"&gt;
+    &lt;/mtl-grid&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+            </code>
+          </pre>
+        </mtl-tab-item>
+        <mtl-tab-item title="TS">
+          <pre>
+            <code>
+import &#123; Component, OnInit &#125; from '@angular/core';
+import &#123; CommonModule &#125; from '@angular/common';
+import &#123; 
+  MtlButtonComponent, 
+  MtlGridComponent, 
+  MtlGridItem, 
+  MtlGridStatus 
+&#125; from '@moontech-components';
+
+@Component(&#123;
+  selector: 'mtl-grid-showcase',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MtlGridComponent,
+    MtlButtonModule,
+  ],
+  templateUrl: './grid-showcase.component.html',
+  
+&#125;)
+
+export class GridShowcaseComponent implements OnInit &#123;
+  
+
+  showBorders: boolean = false;
+
+  data1: MtlGridItem&lt;number&gt;[] = [
+    &#123; item: &#123;text: '1', value: 'value1'&#125;, status: MtlGridStatus.EMPTY &#125; ,
+    &#123; item: &#123;text: '2', value: 'value2'&#125;, status: MtlGridStatus.FREE &#125;,
+    &#123; item: &#123;text: '3', value: 'value3'&#125;, status: MtlGridStatus.OCCUPIED &#125;,
+    &#123; item: &#123;text: '4', value: 'value4'&#125;, status: MtlGridStatus.RESERVED &#125;,
+    &#123; item: &#123;text: '5', value: 'value5'&#125;, status: MtlGridStatus.FREE &#125;,
+    &#123; item: &#123;text: '6', value: 'value6'&#125;, status: MtlGridStatus.FREE &#125;,
+    &#123; item: &#123;text: '7', value: 'value7'&#125;, status: MtlGridStatus.EMPTY &#125;,
+    &#123; item: &#123;text: '8', value: 'value8'&#125;, status: MtlGridStatus.FREE &#125;,
+    &#123; item: &#123;text: '9', value: 'value9'&#125;, status: MtlGridStatus.FREE &#125;,
+    &#123; item: &#123;text: '10', value: 'value10'&#125;, status: MtlGridStatus.OCCUPIED &#125;,
+]
+
+data2: MtlGridItem&lt;number&gt;[] = [
+  &#123; item: &#123;text: '1', value: 'value1'&#125;, status: MtlGridStatus.EMPTY &#125; ,
+  &#123; item: &#123;text: '2', value: 'value2'&#125;, status: MtlGridStatus.FREE &#125;,
+  &#123; item: &#123;text: '3', value: 'value3'&#125;, status: MtlGridStatus.OCCUPIED &#125;,
+  &#123; item: &#123;text: '4', value: 'value4'&#125;, status: MtlGridStatus.RESERVED &#125;,
+  &#123; item: &#123;text: '5', value: 'value5'&#125;, status: MtlGridStatus.FREE &#125;,
+  &#123; item: &#123;text: '6', value: 'value6'&#125;, status: MtlGridStatus.FREE &#125;,
+  &#123; item: &#123;text: '7', value: 'value7'&#125;, status: MtlGridStatus.EMPTY &#125;,
+  &#123; item: &#123;text: '8', value: 'value8'&#125;, status: MtlGridStatus.FREE &#125;,
+  &#123; item: &#123;text: '9', value: 'value9'&#125;, status: MtlGridStatus.FREE &#125;,
+  &#123; item: &#123;text: '10', value: 'value10'&#125;, status: MtlGridStatus.OCCUPIED &#125;,
+]
+
+data3: MtlGridItem&lt;string&gt;[] = [
+  &#123; item: &#123;text: '1', value: 'value1'&#125;, status: MtlGridStatus.FREE &#125; ,
+  &#123; item: &#123;text: '2', value: 'value2'&#125;, status: MtlGridStatus.OCCUPIED &#125;,
+  &#123; item: &#123;text: '3', value: 'value3'&#125;, status: MtlGridStatus.FREE &#125;,
+  &#123; item: &#123;text: '4', value: 'value4'&#125;, status: MtlGridStatus.FREE &#125;,
+  &#123; item: &#123;text: '5', value: 'value5'&#125;, status: MtlGridStatus.RESERVED &#125;,
+  &#123; item: &#123;text: '6', value: 'value6'&#125;, status: MtlGridStatus.FREE &#125;,
+  &#123; item: &#123;text: '7', value: 'value7'&#125;, status: MtlGridStatus.EMPTY &#125;,
+  &#123; item: &#123;text: '8', value: 'value8'&#125;, status: MtlGridStatus.FREE &#125;,
+  &#123; item: &#123;text: '9', value: 'value9'&#125;, status: MtlGridStatus.RESERVED &#125;,
+  &#123; item: &#123;text: '10', value: 'value10'&#125;, status: MtlGridStatus.EMPTY &#125;,
+]
+
+MtlGridStatus: any;
+
+
+toggleBorders() &#123;
+  this.showBorders = !this.showBorders;
+&#125;
+
+
+clickItem(item: MtlGridItem&lt;any>) &#123;
+  switch (item.status) &#123;
+      case MtlGridStatus.FREE:
+          item.status = MtlGridStatus.RESERVED;
+          break;
+      case MtlGridStatus.RESERVED:
+          item.status = MtlGridStatus.OCCUPIED;
+          break;
+      case MtlGridStatus.OCCUPIED:
+          item.status = MtlGridStatus.EMPTY;
+          break;
+      case MtlGridStatus.EMPTY:
+          item.status = MtlGridStatus.FREE;
+          break;
+    &#125;
+  &#125;
+&#125;
+            </code>
+          </pre>
+        </mtl-tab-item>
+      </mtl-tabs>
+    </div>
+    <div inputs>
+      <table class="table border">
+        <thead class="bg-gray-800 text-white dark:bg-indigo-600">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tipo</th>
+            <th>Valor por defecto</th>
+          </tr>
+        </thead>
+        <tbody class="dark:text-white">
+          <tr>
+            <td>cols</td>
+            <td>Número de columnas de la matriz</td>
+            <td>number</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>Informacion de los datos a mostrar en la matriz</td>
+            <td>MtlGridItem&lt;T&gt;[]</td>
+            <td>undefined</td>
+          </tr>
+          <tr>
+            <td>showBorders</td>
+            <td>Indica si muestra o no los bordes de la matriz. Recomendado para usarlo durante el desarrollo.</td>
+            <td>boolean</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>spacing</td>
+            <td>Indica los pixeles de separación entre los elementos</td>
+            <td>number</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>borderRound</td>
+            <td>Indica si queremos bordear los elementos.</td>
+            <td>boolean</td>
+            <td>false</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div outputs>
+      <table class="table">
+        <thead class="bg-gray-800 text-white dark:bg-indigo-600">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Valor devuelto</th>
+          </tr>
+        </thead>
+        <tbody class="dark:text-white">
+          <tr>
+            <td>clickItem</td>
+            <td>Evento al clickar sobre un elemento visible de la matriz.</td>
+            <td>MtlGridItem</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mtl-base-showcase>
+</div>
