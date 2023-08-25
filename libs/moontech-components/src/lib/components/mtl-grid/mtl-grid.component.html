@@ -1,0 +1,25 @@
+<div class="mtl-grid">
+  <div class="grid text-black"
+    [ngStyle]="{
+      'grid-template-columns': 'repeat(' + cols + ', minmax(0, 1fr))',
+      'gap': spacing + 'px',
+    }"
+  > 
+    <div (click)="sendItem(cell)" class="grid-cell cursor-pointer text-2xl flex justify-center py-4" 
+      [ngClass]="{ 
+        'border-black border': showBorders, 
+        'rounded': borderRound,
+        'bg-gray-400': cell.status === Status.EMPTY,
+        'bg-green-500': cell.status === Status.FREE,
+        'bg-yellow-200': cell.status === Status.RESERVED,
+        'bg-red-500': cell.status === Status.OCCUPIED,}"
+      *ngFor="let cell of data"> 
+      {{ cell.item.text }}
+    </div>
+  </div>
+</div>
+
+
+
+
+
