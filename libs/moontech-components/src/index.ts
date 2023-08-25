@@ -66,3 +66,7 @@ export * from './lib/components/mtl-progressBar/mtl-progressBar.component'
 //Spinner
 export * from './lib/components/mtl-spinner/mtl-spinner.component'
 export * from './lib/components/mtl-spinner/mtl-spinner.service'
+
+// Mtl Grid
+export * from './lib/components/mtl-grid/mtl-grid.component';
+export * from './lib/components/mtl-grid/types/mtl-grid'

@@ -62,7 +62,8 @@ export class AppComponent {
         children: [
           { text: 'Toast', path: '/toast' },
           { text: 'Progress Bar', path: '/progressBar' },
-          { text: 'Spinner', path: '/spinner' }
+          { text: 'Spinner', path: '/spinner' },
+          { text: 'Grid', path: '/grid' }
         ]
       }
     ]

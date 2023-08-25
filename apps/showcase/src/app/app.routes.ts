@@ -52,5 +52,9 @@ export const appRoutes: Route[] = [
   {
     path: 'spinner',
     loadComponent: async () => (await import('./components/spinner-showcase/spinner-showcase.component')).SpinnerShowcaseComponent
-  }
+  },
+  {
+    path: 'grid',
+    loadComponent: async () => (await import('./components/grid-showcase/grid-showcase.component')).GridShowcaseComponent
+  },
 ];
